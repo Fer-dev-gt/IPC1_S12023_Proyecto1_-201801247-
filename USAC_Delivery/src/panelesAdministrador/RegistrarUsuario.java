@@ -27,7 +27,6 @@ public class RegistrarUsuario extends javax.swing.JFrame {
         sobrenombre = new javax.swing.JTextField();
         apellidoUsuarioNuevo = new javax.swing.JTextField();
         fechaNacimientoNuevoUsuario = new javax.swing.JTextField();
-        nacionalidad = new javax.swing.JTextField();
         jComboBox1 = new javax.swing.JComboBox<>();
         jComboBox2 = new javax.swing.JComboBox<>();
         telefono = new javax.swing.JTextField();
@@ -36,6 +35,7 @@ public class RegistrarUsuario extends javax.swing.JFrame {
         nuevaPassword = new javax.swing.JPasswordField();
         confirmarNuevaPassword = new javax.swing.JPasswordField();
         jLabel12 = new javax.swing.JLabel();
+        naacionalidad = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -77,7 +77,6 @@ public class RegistrarUsuario extends javax.swing.JFrame {
         getContentPane().add(sobrenombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 220, 123, -1));
         getContentPane().add(apellidoUsuarioNuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(224, 160, 156, -1));
         getContentPane().add(fechaNacimientoNuevoUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 170, 130, -1));
-        getContentPane().add(nacionalidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 160, 123, -1));
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, -1, -1));
@@ -101,6 +100,9 @@ public class RegistrarUsuario extends javax.swing.JFrame {
 
         jLabel12.setText(".");
         getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 710, -1, -1));
+
+        naacionalidad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        getContentPane().add(naacionalidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 160, 120, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -178,7 +180,7 @@ public class RegistrarUsuario extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JTextField nacionalidad;
+    private javax.swing.JComboBox<String> naacionalidad;
     private javax.swing.JTextField nombreUsuarioNuevo;
     private javax.swing.JPasswordField nuevaPassword;
     private javax.swing.JButton registrarDatos;
