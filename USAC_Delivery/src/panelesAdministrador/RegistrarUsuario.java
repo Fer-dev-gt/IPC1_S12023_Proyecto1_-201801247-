@@ -2,9 +2,9 @@ package panelesAdministrador;
 import Autenticar.Auntetificacion;
 
 public class RegistrarUsuario extends javax.swing.JFrame {
-    
     public RegistrarUsuario() {
         initComponents();
+        
     }
 
     @SuppressWarnings("unchecked")
@@ -36,6 +36,7 @@ public class RegistrarUsuario extends javax.swing.JFrame {
         confirmarNuevaPassword = new javax.swing.JPasswordField();
         jLabel12 = new javax.swing.JLabel();
         naacionalidad = new javax.swing.JComboBox<>();
+        regregarLogin = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -76,12 +77,21 @@ public class RegistrarUsuario extends javax.swing.JFrame {
         getContentPane().add(nombreUsuarioNuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 160, 156, -1));
         getContentPane().add(sobrenombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 220, 123, -1));
         getContentPane().add(apellidoUsuarioNuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(224, 160, 156, -1));
+
+        fechaNacimientoNuevoUsuario.setText("dd/mm/aaaa");
+        fechaNacimientoNuevoUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                fechaNacimientoNuevoUsuarioMouseClicked(evt);
+            }
+        });
         getContentPane().add(fechaNacimientoNuevoUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 170, 130, -1));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Usuario Individual", "Kiosko" }));
+        jComboBox1.setSelectedItem(null);
         getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, -1, -1));
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "F", "M" }));
+        jComboBox2.setSelectedItem(null);
         getContentPane().add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 290, -1, -1));
         getContentPane().add(telefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 290, 123, -1));
 
@@ -101,8 +111,17 @@ public class RegistrarUsuario extends javax.swing.JFrame {
         jLabel12.setText(".");
         getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 710, -1, -1));
 
-        naacionalidad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        naacionalidad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Guatemalteca", "Salvadoreña", "Hondureña", "Mexicana" }));
+        naacionalidad.setSelectedItem(null);
         getContentPane().add(naacionalidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 160, 120, -1));
+
+        regregarLogin.setText("Regresar a Login");
+        regregarLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                regregarLoginActionPerformed(evt);
+            }
+        });
+        getContentPane().add(regregarLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 480, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -112,6 +131,16 @@ public class RegistrarUsuario extends javax.swing.JFrame {
         login.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_registrarDatosActionPerformed
+
+    private void fechaNacimientoNuevoUsuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fechaNacimientoNuevoUsuarioMouseClicked
+        fechaNacimientoNuevoUsuario.setText("");
+    }//GEN-LAST:event_fechaNacimientoNuevoUsuarioMouseClicked
+
+    private void regregarLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_regregarLoginActionPerformed
+        Auntetificacion login = new Auntetificacion();
+        login.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_regregarLoginActionPerformed
 
     public static void main(String args[]) {
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -184,6 +213,7 @@ public class RegistrarUsuario extends javax.swing.JFrame {
     private javax.swing.JTextField nombreUsuarioNuevo;
     private javax.swing.JPasswordField nuevaPassword;
     private javax.swing.JButton registrarDatos;
+    private javax.swing.JButton regregarLogin;
     private javax.swing.JTextField sobrenombre;
     private javax.swing.JButton subirFoto;
     private javax.swing.JTextField telefono;

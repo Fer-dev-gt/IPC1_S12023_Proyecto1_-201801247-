@@ -109,7 +109,6 @@ public class Auntetificacion extends javax.swing.JFrame {
     private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
         if(getUsuario().equals("a") && getClave().equals("a")){
             menuAdministrador.setVisible(true);
-
             this.setVisible(false);
         }else if(getUsuario().equals("c") && getClave().equals("c")){
             menuUsuario.setVisible(true);
