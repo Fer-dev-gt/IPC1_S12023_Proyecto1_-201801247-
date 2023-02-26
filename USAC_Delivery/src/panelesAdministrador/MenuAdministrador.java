@@ -3,13 +3,13 @@ import panelesUsuario.menuUsuario;
 import java.awt.BorderLayout;
 
 
-public class MenuAdministrador extends javax.swing.JFrame {
-    RegionesPrecios ventanaRegiones = new RegionesPrecios();
-    DepartamentoMunicipio ventanaDepartamentoMuni = new DepartamentoMunicipio();
-    Reportes ventanaReportes = new Reportes();
+public class menuAdministrador extends javax.swing.JFrame {
+    panelRegionesPrecios ventanaRegiones = new panelRegionesPrecios();
+    panelDepartamentosMuni ventanaDepartamentoMuni = new panelDepartamentosMuni();
+    panelReportes ventanaReportes = new panelReportes();
 
     
-    public MenuAdministrador() {
+    public menuAdministrador() {
         initComponents();
         btnRegionesPrecios.setText("<html>Manejar Regiones <br>y Precios<br></</html>");
         btnDepartamentoMunicipios.setText("<html>Departamentos <br>y Municipios</html>");
@@ -424,31 +424,6 @@ public class MenuAdministrador extends javax.swing.JFrame {
     
     
     
-    
-    
-    
-    public static void main(String args[]) { 
-       //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MenuAdministrador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new MenuAdministrador().setVisible(true);
-            }
-        });
-    }
 
     
     

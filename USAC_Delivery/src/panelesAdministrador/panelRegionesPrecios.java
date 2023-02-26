@@ -1,7 +1,7 @@
 package panelesAdministrador;
-public class RegionesPrecios extends javax.swing.JPanel {
+public class panelRegionesPrecios extends javax.swing.JPanel {
 
-    public RegionesPrecios() {
+    public panelRegionesPrecios() {
         initComponents();
     }
 

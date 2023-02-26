@@ -1,12 +1,14 @@
 package panelesAdministrador;
-import Autenticar.Auntetificacion;
+import Autenticar.frameLogin;
 
 public class RegistrarUsuario extends javax.swing.JFrame {
+
     public RegistrarUsuario() {
         initComponents();
-        
     }
 
+    
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -27,16 +29,17 @@ public class RegistrarUsuario extends javax.swing.JFrame {
         sobrenombre = new javax.swing.JTextField();
         apellidoUsuarioNuevo = new javax.swing.JTextField();
         fechaNacimientoNuevoUsuario = new javax.swing.JTextField();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        rol = new javax.swing.JComboBox<>();
+        genero = new javax.swing.JComboBox<>();
         telefono = new javax.swing.JTextField();
         registrarDatos = new javax.swing.JButton();
         subirFoto = new javax.swing.JButton();
         nuevaPassword = new javax.swing.JPasswordField();
         confirmarNuevaPassword = new javax.swing.JPasswordField();
         jLabel12 = new javax.swing.JLabel();
-        naacionalidad = new javax.swing.JComboBox<>();
+        nacionalidad = new javax.swing.JComboBox<>();
         regregarLogin = new javax.swing.JButton();
+        limpiarDatos = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -86,13 +89,13 @@ public class RegistrarUsuario extends javax.swing.JFrame {
         });
         getContentPane().add(fechaNacimientoNuevoUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 170, 130, -1));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Usuario Individual", "Kiosko" }));
-        jComboBox1.setSelectedItem(null);
-        getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, -1, -1));
+        rol.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Usuario Individual", "Kiosko" }));
+        rol.setSelectedItem(null);
+        getContentPane().add(rol, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, -1, -1));
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "F", "M" }));
-        jComboBox2.setSelectedItem(null);
-        getContentPane().add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 290, -1, -1));
+        genero.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "F", "M" }));
+        genero.setSelectedItem(null);
+        getContentPane().add(genero, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 290, -1, -1));
         getContentPane().add(telefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 290, 123, -1));
 
         registrarDatos.setText("Registrar Datos");
@@ -111,9 +114,9 @@ public class RegistrarUsuario extends javax.swing.JFrame {
         jLabel12.setText(".");
         getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 710, -1, -1));
 
-        naacionalidad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Guatemalteca", "Salvadoreña", "Hondureña", "Mexicana" }));
-        naacionalidad.setSelectedItem(null);
-        getContentPane().add(naacionalidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 160, 120, -1));
+        nacionalidad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Guatemalteca", "Salvadoreña", "Hondureña", "Mexicana" }));
+        nacionalidad.setSelectedItem(null);
+        getContentPane().add(nacionalidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 160, 120, -1));
 
         regregarLogin.setText("Regresar a Login");
         regregarLogin.addActionListener(new java.awt.event.ActionListener() {
@@ -123,11 +126,42 @@ public class RegistrarUsuario extends javax.swing.JFrame {
         });
         getContentPane().add(regregarLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 480, -1, -1));
 
+        limpiarDatos.setText("Limpiar Casillas");
+        limpiarDatos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                limpiarDatosActionPerformed(evt);
+            }
+        });
+        getContentPane().add(limpiarDatos, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 480, -1, -1));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void registrarDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarDatosActionPerformed
-        Auntetificacion login = new Auntetificacion();
+        String correoNuevo = correoElectronico.getText();
+        String nombreNuevo = nombreUsuarioNuevo.getText();
+        String apellidoNuevo = apellidoUsuarioNuevo.getText();
+        String sobrenombreNuevo = sobrenombre.getText();
+        String telefonoNuevo = telefono.getText();
+        String fechaNacimiento = fechaNacimientoNuevoUsuario.getText();
+                
+        Object rolNuevo = rol.getSelectedItem();
+        if (rol != null) {
+            String rolRegistrado = rolNuevo.toString();
+        }
+        Object nacionalidadNueva = nacionalidad.getSelectedItem();
+        if (nacionalidadNueva != null) {
+            String nacionalidadRegistrada = nacionalidadNueva.toString();
+        }
+        Object generoNuevo = genero.getSelectedItem();
+        if (generoNuevo != null) {
+            String generoEscogido = nacionalidadNueva.toString();
+        }
+
+        
+        
+        
+        frameLogin login = new frameLogin();
         login.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_registrarDatosActionPerformed
@@ -137,52 +171,25 @@ public class RegistrarUsuario extends javax.swing.JFrame {
     }//GEN-LAST:event_fechaNacimientoNuevoUsuarioMouseClicked
 
     private void regregarLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_regregarLoginActionPerformed
-        Auntetificacion login = new Auntetificacion();
+        frameLogin login = new frameLogin();
         login.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_regregarLoginActionPerformed
 
-    public static void main(String args[]) {
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(RegistrarUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(RegistrarUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(RegistrarUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(RegistrarUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+    private void limpiarDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_limpiarDatosActionPerformed
+        correoElectronico.setText("");
+        nombreUsuarioNuevo.setText("");
+        apellidoUsuarioNuevo.setText("");
+        sobrenombre.setText("");
+        telefono.setText("");
+        fechaNacimientoNuevoUsuario.setText("dd/mm/aaaa");
+        rol.setSelectedItem(null);
+        nacionalidad.setSelectedItem(null);
+        genero.setSelectedItem(null);
+        nuevaPassword.setText("");
+        confirmarNuevaPassword.setText("");
+    }//GEN-LAST:event_limpiarDatosActionPerformed
 
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new RegistrarUsuario().setVisible(true);
-            }
-        });
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -195,8 +202,7 @@ public class RegistrarUsuario extends javax.swing.JFrame {
     private javax.swing.JPasswordField confirmarNuevaPassword;
     private javax.swing.JTextField correoElectronico;
     private javax.swing.JTextField fechaNacimientoNuevoUsuario;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JComboBox<String> genero;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -209,11 +215,13 @@ public class RegistrarUsuario extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JComboBox<String> naacionalidad;
+    private javax.swing.JButton limpiarDatos;
+    private javax.swing.JComboBox<String> nacionalidad;
     private javax.swing.JTextField nombreUsuarioNuevo;
     private javax.swing.JPasswordField nuevaPassword;
     private javax.swing.JButton registrarDatos;
     private javax.swing.JButton regregarLogin;
+    private javax.swing.JComboBox<String> rol;
     private javax.swing.JTextField sobrenombre;
     private javax.swing.JButton subirFoto;
     private javax.swing.JTextField telefono;
