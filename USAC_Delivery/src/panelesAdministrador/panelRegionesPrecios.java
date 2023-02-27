@@ -11,25 +11,11 @@ public class panelRegionesPrecios extends javax.swing.JPanel {
 
         jLabel5 = new javax.swing.JLabel();
 
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         jLabel5.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
         jLabel5.setText("Manejo de regiones y precios");
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(245, Short.MAX_VALUE)
-                .addComponent(jLabel5)
-                .addGap(194, 194, 194))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(160, 160, 160)
-                .addComponent(jLabel5)
-                .addContainerGap(396, Short.MAX_VALUE))
-        );
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(269, 25, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
 

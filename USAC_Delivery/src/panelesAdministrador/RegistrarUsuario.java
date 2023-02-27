@@ -87,7 +87,7 @@ public class registrarUsuario extends javax.swing.JFrame {
         });
         getContentPane().add(fechaNacimientoNuevoUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 170, 130, -1));
 
-        rol.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Usuario Individual", "Kiosko" }));
+        rol.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Usuario Individual", "Usuario Empresarial", "Kiosko", " " }));
         rol.setSelectedItem(null);
         getContentPane().add(rol, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, -1, -1));
 

@@ -188,7 +188,7 @@ public class ventanasPrincipal extends javax.swing.JFrame {
         });
 
         datosFacturacion.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
-        datosFacturacion.setText("Registras Datos Fac");
+        datosFacturacion.setText("Registrar Datos Factura");
         datosFacturacion.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         datosFacturacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -243,15 +243,15 @@ public class ventanasPrincipal extends javax.swing.JFrame {
                         .addComponent(registrarTarjeta, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(datosFacturacion, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(cotizarPaquetes, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(opcionesUsuarioLayout.createSequentialGroup()
                         .addComponent(realizarCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(descargarFacturaGuia)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(verEnviosSolicitados, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(407, Short.MAX_VALUE))
         );
         opcionesUsuarioLayout.setVerticalGroup(
             opcionesUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

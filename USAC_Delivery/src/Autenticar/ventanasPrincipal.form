@@ -222,18 +222,18 @@
                           <Component id="registrarTarjeta" min="-2" pref="199" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="datosFacturacion" min="-2" pref="213" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="cotizarPaquetes" min="-2" pref="202" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="realizarCompra" min="-2" pref="199" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="descargarFacturaGuia" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="verEnviosSolicitados" min="-2" pref="202" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="407" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -275,7 +275,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Helvetica Neue" size="18" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Registras Datos Fac"/>
+            <Property name="text" type="java.lang.String" value="Registrar Datos Factura"/>
             <Property name="horizontalTextPosition" type="int" value="0"/>
           </Properties>
           <Events>

@@ -10,6 +10,9 @@ public class panelCotizarPaquetes extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
+        buttonGroup2 = new javax.swing.ButtonGroup();
+        buttonGroup3 = new javax.swing.ButtonGroup();
         jPanel9 = new javax.swing.JPanel();
         jRadioButton2 = new javax.swing.JRadioButton();
         jLabel14 = new javax.swing.JLabel();
@@ -44,7 +47,9 @@ public class panelCotizarPaquetes extends javax.swing.JPanel {
 
         jPanel9.setBackground(new java.awt.Color(153, 255, 102));
 
+        buttonGroup3.add(jRadioButton2);
         jRadioButton2.setForeground(new java.awt.Color(0, 0, 0));
+        jRadioButton2.setSelected(true);
         jRadioButton2.setText("Servicio Especial");
 
         jLabel14.setForeground(new java.awt.Color(0, 0, 0));
@@ -107,15 +112,19 @@ public class panelCotizarPaquetes extends javax.swing.JPanel {
 
         jButton5.setText("Cancelar Envío");
 
+        buttonGroup1.add(paquetePequenio);
         paquetePequenio.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         paquetePequenio.setText("Pequeño");
 
+        buttonGroup1.add(paqueteMediano);
         paqueteMediano.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         paqueteMediano.setText("Mediano");
 
+        buttonGroup1.add(paqueteGrande);
         paqueteGrande.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         paqueteGrande.setText("Grande");
 
+        buttonGroup2.add(cobroContraEntrega);
         cobroContraEntrega.setText("Cobro contra entrega, cobro adicional de Q5.00");
         cobroContraEntrega.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -123,6 +132,7 @@ public class panelCotizarPaquetes extends javax.swing.JPanel {
             }
         });
 
+        buttonGroup2.add(cobroaMiCuenta);
         cobroaMiCuenta.setText("Cobro a mi cuento, pago con tarjeta de débito o crédito");
 
         jLabel12.setText("Número de Paquetes");
@@ -132,6 +142,7 @@ public class panelCotizarPaquetes extends javax.swing.JPanel {
 
         jPanel8.setBackground(new java.awt.Color(255, 255, 51));
 
+        buttonGroup3.add(jRadioButton1);
         jRadioButton1.setForeground(new java.awt.Color(0, 0, 0));
         jRadioButton1.setText("Servicio Estandar");
         jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -216,31 +227,28 @@ public class panelCotizarPaquetes extends javax.swing.JPanel {
                                 .addComponent(paqueteGrande)))
                         .addGap(52, 52, 52)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(4, 4, 4)
+                        .addComponent(jLabel10))
+                    .addComponent(jButton2)
+                    .addComponent(jLabel11)
+                    .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(jButton3)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton4))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 339, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(40, 40, 40)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(4, 4, 4)
-                                .addComponent(jLabel10))
-                            .addComponent(jButton2)
-                            .addComponent(jLabel11)
-                            .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jButton3)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jButton4))
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 339, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(40, 40, 40)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(cobroContraEntrega)
-                                    .addComponent(cobroaMiCuenta))))
-                        .addGap(50, 50, 50))
+                            .addComponent(cobroContraEntrega)
+                            .addComponent(cobroaMiCuenta)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(320, 320, 320)
+                        .addGap(105, 105, 105)
                         .addComponent(jButton5)))
-                .addGap(259, 259, 259))
+                .addGap(309, 309, 309))
             .addGroup(layout.createSequentialGroup()
                 .addGap(305, 305, 305)
                 .addComponent(jLabel3)
@@ -277,7 +285,9 @@ public class panelCotizarPaquetes extends javax.swing.JPanel {
                             .addComponent(paqueteMediano)
                             .addComponent(paqueteGrande))
                         .addGap(27, 27, 27)
-                        .addComponent(jButton1)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButton1)
+                            .addComponent(jButton5))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 81, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -301,8 +311,6 @@ public class panelCotizarPaquetes extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jButton3)
                             .addComponent(jButton4))
-                        .addGap(1, 1, 1)
-                        .addComponent(jButton5)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -325,6 +333,9 @@ public class panelCotizarPaquetes extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.ButtonGroup buttonGroup2;
+    private javax.swing.ButtonGroup buttonGroup3;
     private javax.swing.JRadioButton cobroContraEntrega;
     private javax.swing.JRadioButton cobroaMiCuenta;
     private javax.swing.JButton jButton1;

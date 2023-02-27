@@ -14,39 +14,17 @@ public class panelDepartamentosMuni extends javax.swing.JPanel {
         jLabel7 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
 
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         jLabel6.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
         jLabel6.setText("Manejo de departamentos y municipios");
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 30, -1, -1));
 
         jLabel7.setText("Datos de departamentos:");
+        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 90, -1, -1));
 
         jLabel13.setText("Datos de Municipio");
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(384, 384, 384)
-                .addComponent(jLabel6)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(151, 151, 151)
-                .addComponent(jLabel7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel13)
-                .addGap(317, 317, 317))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addComponent(jLabel6)
-                .addGap(81, 81, 81)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
-                    .addComponent(jLabel13))
-                .addContainerGap(394, Short.MAX_VALUE))
-        );
+        add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 90, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
 
