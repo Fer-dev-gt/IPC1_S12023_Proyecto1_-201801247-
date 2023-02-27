@@ -34,6 +34,20 @@ public class menuUsuario extends javax.swing.JFrame {
         btnDescargarFacturaGuia = new javax.swing.JButton();
         btnCerrarSesionUsuario = new javax.swing.JButton();
         jTabbedPane1 = new javax.swing.JTabbedPane();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        nit = new javax.swing.JTextField();
+        nombreCompleto = new javax.swing.JTextField();
+        direccion = new javax.swing.JTextField();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
+        jPanel5 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        jPanel6 = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
@@ -43,14 +57,6 @@ public class menuUsuario extends javax.swing.JFrame {
         fechaVencimiento = new javax.swing.JTextField();
         nombreTarjeta = new javax.swing.JTextField();
         cvv = new javax.swing.JTextField();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
-        jLabel20 = new javax.swing.JLabel();
-        jLabel21 = new javax.swing.JLabel();
-        nit = new javax.swing.JTextField();
-        nombreCompleto = new javax.swing.JTextField();
-        direccion = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -83,12 +89,6 @@ public class menuUsuario extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         jComboBox5 = new javax.swing.JComboBox<>();
-        jPanel4 = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
-        jPanel5 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
-        jPanel6 = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
         panelNavegador = new javax.swing.JPanel();
         labelMenuUsuario = new javax.swing.JLabel();
 
@@ -166,6 +166,125 @@ public class menuUsuario extends javax.swing.JFrame {
 
         jTabbedPane1.setTabPlacement(javax.swing.JTabbedPane.BOTTOM);
 
+        jLabel2.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
+        jLabel2.setText("Registro de datos de facturación");
+
+        jLabel19.setText("Nombre completo");
+
+        jLabel20.setText("NIT");
+
+        jLabel21.setText("Dirección");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(487, 487, 487)
+                        .addComponent(jLabel2))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(120, 120, 120)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel19)
+                            .addComponent(nombreCompleto, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(107, 107, 107)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel21)
+                            .addComponent(direccion, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(110, 110, 110)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel20)
+                            .addComponent(nit, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(222, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(jLabel2)
+                .addGap(65, 65, 65)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel19)
+                    .addComponent(jLabel21)
+                    .addComponent(jLabel20))
+                .addGap(49, 49, 49)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(nit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(direccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(nombreCompleto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(529, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("tab2", jPanel2);
+
+        jLabel6.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
+        jLabel6.setText("Realizar Compra");
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addContainerGap(540, Short.MAX_VALUE)
+                .addComponent(jLabel6)
+                .addGap(538, 538, 538))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel6)
+                .addContainerGap(693, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("tab4", jPanel4);
+
+        jLabel4.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
+        jLabel4.setText("Descargar factura y guía (etiqueta de envío)");
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                .addContainerGap(390, Short.MAX_VALUE)
+                .addComponent(jLabel4)
+                .addGap(379, 379, 379))
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addComponent(jLabel4)
+                .addContainerGap(680, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("tab5", jPanel5);
+
+        jLabel5.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
+        jLabel5.setText("Ver envíos solicitados");
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                .addContainerGap(516, Short.MAX_VALUE)
+                .addComponent(jLabel5)
+                .addGap(503, 503, 503))
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addComponent(jLabel5)
+                .addContainerGap(684, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("tab6", jPanel6);
+
         jLabel1.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
         jLabel1.setText("Registro de tarjeta de crédito/débito");
 
@@ -223,59 +342,6 @@ public class menuUsuario extends javax.swing.JFrame {
         );
 
         jTabbedPane1.addTab("tab1", jPanel1);
-
-        jLabel2.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
-        jLabel2.setText("Registro de datos de facturación");
-
-        jLabel19.setText("Nombre completo");
-
-        jLabel20.setText("NIT");
-
-        jLabel21.setText("Dirección");
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(487, 487, 487)
-                        .addComponent(jLabel2))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(120, 120, 120)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel19)
-                            .addComponent(nombreCompleto, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(107, 107, 107)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel21)
-                            .addComponent(direccion, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(110, 110, 110)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel20)
-                            .addComponent(nit, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(222, Short.MAX_VALUE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(jLabel2)
-                .addGap(65, 65, 65)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel19)
-                    .addComponent(jLabel21)
-                    .addComponent(jLabel20))
-                .addGap(49, 49, 49)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(nit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(direccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(nombreCompleto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(529, Short.MAX_VALUE))
-        );
-
-        jTabbedPane1.addTab("tab2", jPanel2);
 
         jLabel3.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
         jLabel3.setText("Cotización de paquetes");
@@ -551,72 +617,6 @@ public class menuUsuario extends javax.swing.JFrame {
         );
 
         jTabbedPane1.addTab("tab3", jPanel3);
-
-        jLabel6.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
-        jLabel6.setText("Realizar Compra");
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap(540, Short.MAX_VALUE)
-                .addComponent(jLabel6)
-                .addGap(538, 538, 538))
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel6)
-                .addContainerGap(693, Short.MAX_VALUE))
-        );
-
-        jTabbedPane1.addTab("tab4", jPanel4);
-
-        jLabel4.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
-        jLabel4.setText("Descargar factura y guía (etiqueta de envío)");
-
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                .addContainerGap(390, Short.MAX_VALUE)
-                .addComponent(jLabel4)
-                .addGap(379, 379, 379))
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addComponent(jLabel4)
-                .addContainerGap(680, Short.MAX_VALUE))
-        );
-
-        jTabbedPane1.addTab("tab5", jPanel5);
-
-        jLabel5.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
-        jLabel5.setText("Ver envíos solicitados");
-
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                .addContainerGap(516, Short.MAX_VALUE)
-                .addComponent(jLabel5)
-                .addGap(503, 503, 503))
-        );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addComponent(jLabel5)
-                .addContainerGap(684, Short.MAX_VALUE))
-        );
-
-        jTabbedPane1.addTab("tab6", jPanel6);
 
         getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, 1270, 760));
 

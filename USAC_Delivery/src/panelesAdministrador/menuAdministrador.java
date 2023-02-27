@@ -1,8 +1,8 @@
 package panelesAdministrador;
 
-public class menuAdministrador2 extends javax.swing.JPanel {
+public class menuAdministrador extends javax.swing.JPanel {
 
-    public menuAdministrador2() {
+    public menuAdministrador() {
         initComponents();
     }
 
@@ -41,23 +41,21 @@ public class menuAdministrador2 extends javax.swing.JPanel {
                 .addComponent(jLabel4)
                 .addGap(506, 506, 506))
             .addGroup(layout.createSequentialGroup()
+                .addGap(72, 72, 72)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
+                    .addComponent(codigoKiosko, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(61, 61, 61)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(registrarKiosko)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(72, 72, 72)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(codigoKiosko, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(61, 61, 61)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel3)
                             .addComponent(nombrekiosko, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(61, 61, 61)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(codigoRegion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(556, 556, 556)
-                        .addComponent(registrarKiosko)))
+                            .addComponent(jLabel2))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -75,9 +73,9 @@ public class menuAdministrador2 extends javax.swing.JPanel {
                     .addComponent(codigoKiosko, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(nombrekiosko, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(codigoRegion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(81, 81, 81)
+                .addGap(27, 27, 27)
                 .addComponent(registrarKiosko)
-                .addContainerGap(270, Short.MAX_VALUE))
+                .addContainerGap(324, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

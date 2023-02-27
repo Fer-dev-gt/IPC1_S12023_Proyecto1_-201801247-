@@ -1,13 +1,11 @@
 package panelesAdministrador;
-import Autenticar.frameLogin;
+import Autenticar.ventanasPrincipal;
 
 public class RegistrarUsuario extends javax.swing.JFrame {
-
     public RegistrarUsuario() {
         initComponents();
     }
 
-    
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -138,7 +136,7 @@ public class RegistrarUsuario extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void registrarDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarDatosActionPerformed
-        String correoNuevo = correoElectronico.getText();
+        /*String correoNuevo = correoElectronico.getText();
         String nombreNuevo = nombreUsuarioNuevo.getText();
         String apellidoNuevo = apellidoUsuarioNuevo.getText();
         String sobrenombreNuevo = sobrenombre.getText();
@@ -156,14 +154,12 @@ public class RegistrarUsuario extends javax.swing.JFrame {
         Object generoNuevo = genero.getSelectedItem();
         if (generoNuevo != null) {
             String generoEscogido = nacionalidadNueva.toString();
-        }
+        }*/
 
-        
-        
-        
-        frameLogin login = new frameLogin();
-        login.setVisible(true);
+        ventanasPrincipal ventana = new ventanasPrincipal();
+        ventana.setVisible(true);
         this.setVisible(false);
+        
     }//GEN-LAST:event_registrarDatosActionPerformed
 
     private void fechaNacimientoNuevoUsuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fechaNacimientoNuevoUsuarioMouseClicked
@@ -171,11 +167,29 @@ public class RegistrarUsuario extends javax.swing.JFrame {
     }//GEN-LAST:event_fechaNacimientoNuevoUsuarioMouseClicked
 
     private void regregarLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_regregarLoginActionPerformed
-        frameLogin login = new frameLogin();
-        login.setVisible(true);
+        ventanasPrincipal ventana = new ventanasPrincipal();
+        ventana.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_regregarLoginActionPerformed
 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     private void limpiarDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_limpiarDatosActionPerformed
         correoElectronico.setText("");
         nombreUsuarioNuevo.setText("");
