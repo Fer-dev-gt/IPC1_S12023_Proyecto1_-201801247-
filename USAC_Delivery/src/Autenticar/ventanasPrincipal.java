@@ -6,7 +6,7 @@ import panelesAdministrador.panelDepartamentosMuni;
 import panelesAdministrador.panelKioskos;
 import panelesAdministrador.panelRegionesPrecios;
 import panelesAdministrador.panelReportes;
-import panelesUsuario.menuUsuario2;
+import panelesUsuario.menuUsuario;
 import panelesUsuario.panelRegitstrarTarjeta;
 import panelesUsuario.panelDatosFacturacion;
 import panelesUsuario.panelCotizarPaquetes;
@@ -22,7 +22,7 @@ public class ventanasPrincipal extends javax.swing.JFrame {
     private panelKioskos panelKioskos = new panelKioskos();
     private panelRegionesPrecios panelRegionesPrecios = new panelRegionesPrecios();
     private panelReportes panelReportes = new panelReportes();
-    private menuUsuario2 menuUsuario = new menuUsuario2();
+    private menuUsuario menuUsuario = new menuUsuario();
     private panelRegitstrarTarjeta panelRegitstrarTarjeta = new panelRegitstrarTarjeta();
     private panelDatosFacturacion panelDatosFacturacion = new panelDatosFacturacion();
     private panelCotizarPaquetes panelCotizarPaquetes = new panelCotizarPaquetes();
@@ -33,8 +33,8 @@ public class ventanasPrincipal extends javax.swing.JFrame {
     
     
     private void cambiarPanel(javax.swing.JPanel miPanel){
-        miPanel.setSize(680,320);
-        miPanel.setLocation(0,0);        
+        miPanel.setLocation(0,0);       
+        miPanel.setSize(1200,720);
         panelBase.removeAll();
         panelBase.add(miPanel, BorderLayout.CENTER);
         panelBase.revalidate();
@@ -82,7 +82,7 @@ public class ventanasPrincipal extends javax.swing.JFrame {
         );
         panelBaseLayout.setVerticalGroup(
             panelBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 384, Short.MAX_VALUE)
+            .addGap(0, 629, Short.MAX_VALUE)
         );
 
         panelAbajo.setBackground(new java.awt.Color(0, 153, 153));
@@ -173,7 +173,7 @@ public class ventanasPrincipal extends javax.swing.JFrame {
                 .addGroup(opcionesAdministradorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnRegionesPrecios)
                     .addComponent(btnDepartamentoMunicipios))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(12, Short.MAX_VALUE))
         );
 
         opcionesUsuario.setBackground(new java.awt.Color(153, 255, 255));
@@ -239,30 +239,34 @@ public class ventanasPrincipal extends javax.swing.JFrame {
             .addGroup(opcionesUsuarioLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(opcionesUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(datosFacturacion, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cotizarPaquetes, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(registrarTarjeta, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(realizarCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(descargarFacturaGuia)
-                    .addComponent(verEnviosSolicitados, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(49, Short.MAX_VALUE))
+                    .addGroup(opcionesUsuarioLayout.createSequentialGroup()
+                        .addComponent(registrarTarjeta, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(datosFacturacion, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cotizarPaquetes, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(opcionesUsuarioLayout.createSequentialGroup()
+                        .addComponent(realizarCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(descargarFacturaGuia)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(verEnviosSolicitados, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         opcionesUsuarioLayout.setVerticalGroup(
             opcionesUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(opcionesUsuarioLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(registrarTarjeta)
+                .addGroup(opcionesUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(registrarTarjeta)
+                    .addComponent(datosFacturacion)
+                    .addComponent(cotizarPaquetes))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(datosFacturacion)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(cotizarPaquetes)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(realizarCompra)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(descargarFacturaGuia)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(verEnviosSolicitados)
-                .addContainerGap(54, Short.MAX_VALUE))
+                .addGroup(opcionesUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(realizarCompra)
+                    .addComponent(descargarFacturaGuia)
+                    .addComponent(verEnviosSolicitados))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -273,24 +277,23 @@ public class ventanasPrincipal extends javax.swing.JFrame {
                 .addComponent(panelAbajo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(opcionesAdministrador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(opcionesUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(6, 6, 6))
+                .addGap(6, 347, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
-                .addComponent(panelBase, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(panelBase, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(opcionesUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(panelBase, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(panelBase, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(opcionesAdministrador, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(panelAbajo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(opcionesUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 36, Short.MAX_VALUE))
+                    .addComponent(panelAbajo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(opcionesAdministrador, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(opcionesUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -311,6 +314,8 @@ public class ventanasPrincipal extends javax.swing.JFrame {
 
     }//GEN-LAST:event_ingresoLogInActionPerformed
 
+    
+    // Botones del menú del Admnistrador
     private void btnManejarKioskosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManejarKioskosActionPerformed
         cambiarPanel(panelKioskos);
     }//GEN-LAST:event_btnManejarKioskosActionPerformed
@@ -327,6 +332,8 @@ public class ventanasPrincipal extends javax.swing.JFrame {
         cambiarPanel(panelReportes);
     }//GEN-LAST:event_btnreportesActionPerformed
 
+    
+    // Botones del menú del Usuario
     private void registrarTarjetaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarTarjetaActionPerformed
         cambiarPanel(panelRegitstrarTarjeta);
     }//GEN-LAST:event_registrarTarjetaActionPerformed

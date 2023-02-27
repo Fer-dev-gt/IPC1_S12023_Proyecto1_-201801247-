@@ -1,8 +1,8 @@
 package panelesAdministrador;
 import Autenticar.ventanasPrincipal;
 
-public class RegistrarUsuario extends javax.swing.JFrame {
-    public RegistrarUsuario() {
+public class registrarUsuario extends javax.swing.JFrame {
+    public registrarUsuario() {
         initComponents();
     }
 
