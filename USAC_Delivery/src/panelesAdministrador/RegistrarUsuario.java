@@ -1,10 +1,22 @@
 package panelesAdministrador;
 import Autenticar.ventanasPrincipal;
+import java.util.ArrayList;
 
-public class registrarUsuario extends javax.swing.JFrame {
+public class registrarUsuario extends javax.swing.JFrame {    
+    String correo, nombre, apellido, fechaNacimiento, telefono, sobrenombre;
+    char[] password;
+    Object rol, genero, nacionalidad;
+    
     public registrarUsuario() {
         initComponents();
     }
+    
+    ArrayList <registrarUsuario> listaUsuarios = new ArrayList<registrarUsuario>();
+    
+    public ArrayList<registrarUsuario> getListaUsuarios() {
+        return listaUsuarios;
+    }
+    
 
     
     @SuppressWarnings("unchecked")
@@ -24,18 +36,18 @@ public class registrarUsuario extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         correoElectronico = new javax.swing.JTextField();
         nombreUsuarioNuevo = new javax.swing.JTextField();
-        sobrenombre = new javax.swing.JTextField();
+        sobrenombreUsuario = new javax.swing.JTextField();
         apellidoUsuarioNuevo = new javax.swing.JTextField();
         fechaNacimientoNuevoUsuario = new javax.swing.JTextField();
-        rol = new javax.swing.JComboBox<>();
-        genero = new javax.swing.JComboBox<>();
-        telefono = new javax.swing.JTextField();
+        rolUsuario = new javax.swing.JComboBox<>();
+        generoUsuario = new javax.swing.JComboBox<>();
+        telefonoUsuario = new javax.swing.JTextField();
         registrarDatos = new javax.swing.JButton();
         subirFoto = new javax.swing.JButton();
         nuevaPassword = new javax.swing.JPasswordField();
         confirmarNuevaPassword = new javax.swing.JPasswordField();
         jLabel12 = new javax.swing.JLabel();
-        nacionalidad = new javax.swing.JComboBox<>();
+        nacionalidadUsuario = new javax.swing.JComboBox<>();
         regregarLogin = new javax.swing.JButton();
         limpiarDatos = new javax.swing.JButton();
 
@@ -76,7 +88,7 @@ public class registrarUsuario extends javax.swing.JFrame {
         getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(493, 251, -1, -1));
         getContentPane().add(correoElectronico, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 73, 346, -1));
         getContentPane().add(nombreUsuarioNuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 160, 156, -1));
-        getContentPane().add(sobrenombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 220, 123, -1));
+        getContentPane().add(sobrenombreUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 220, 123, -1));
         getContentPane().add(apellidoUsuarioNuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(224, 160, 156, -1));
 
         fechaNacimientoNuevoUsuario.setText("dd/mm/aaaa");
@@ -87,14 +99,14 @@ public class registrarUsuario extends javax.swing.JFrame {
         });
         getContentPane().add(fechaNacimientoNuevoUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 170, 130, -1));
 
-        rol.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Usuario Individual", "Usuario Empresarial", "Kiosko", " " }));
-        rol.setSelectedItem(null);
-        getContentPane().add(rol, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, -1, -1));
+        rolUsuario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Usuario Individual", "Usuario Empresarial", "Kiosko" }));
+        rolUsuario.setSelectedItem(null);
+        getContentPane().add(rolUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, -1, -1));
 
-        genero.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "F", "M" }));
-        genero.setSelectedItem(null);
-        getContentPane().add(genero, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 290, -1, -1));
-        getContentPane().add(telefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 290, 123, -1));
+        generoUsuario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "F", "M" }));
+        generoUsuario.setSelectedItem(null);
+        getContentPane().add(generoUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 290, -1, -1));
+        getContentPane().add(telefonoUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 290, 123, -1));
 
         registrarDatos.setText("Registrar Datos");
         registrarDatos.addActionListener(new java.awt.event.ActionListener() {
@@ -112,9 +124,9 @@ public class registrarUsuario extends javax.swing.JFrame {
         jLabel12.setText(".");
         getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 710, -1, -1));
 
-        nacionalidad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Guatemalteca", "Salvadoreña", "Hondureña", "Mexicana" }));
-        nacionalidad.setSelectedItem(null);
-        getContentPane().add(nacionalidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 160, 120, -1));
+        nacionalidadUsuario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Guatemalteca", "Salvadoreña", "Hondureña", "Mexicana" }));
+        nacionalidadUsuario.setSelectedItem(null);
+        getContentPane().add(nacionalidadUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 160, 120, -1));
 
         regregarLogin.setText("Regresar a Login");
         regregarLogin.addActionListener(new java.awt.event.ActionListener() {
@@ -135,16 +147,33 @@ public class registrarUsuario extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+
+    
+    public registrarUsuario(String correo, String nombre, String apellido, String fechaNacimiento, char[] password, String telefono, String sobrenombre, Object rol, Object genero, Object nacionalidad){
+        this.correo = correo;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.fechaNacimiento = fechaNacimiento;
+        this.password = password;
+        this.telefono = telefono;
+        this.sobrenombre = sobrenombre;
+        this.rol = rol;
+        this.genero = genero;
+        this.nacionalidad = nacionalidad;
+    }
+    
+    
     private void registrarDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarDatosActionPerformed
-        /*String correoNuevo = correoElectronico.getText();
-        String nombreNuevo = nombreUsuarioNuevo.getText();
-        String apellidoNuevo = apellidoUsuarioNuevo.getText();
-        String sobrenombreNuevo = sobrenombre.getText();
-        String telefonoNuevo = telefono.getText();
-        String fechaNacimiento = fechaNacimientoNuevoUsuario.getText();
-                
-        Object rolNuevo = rol.getSelectedItem();
-        if (rol != null) {
+        
+        try{
+            listaUsuarios.add(new registrarUsuario(correoElectronico.getText(), nombreUsuarioNuevo.getText(), apellidoUsuarioNuevo.getText(), fechaNacimientoNuevoUsuario.getText() , nuevaPassword.getPassword(), telefonoUsuario.getText(), sobrenombreUsuario.getText(), rolUsuario.getSelectedItem(), generoUsuario.getSelectedItem(), nacionalidadUsuario.getSelectedItem()));
+            nombreUsuarioNuevo.setText("");
+            System.out.println(listaUsuarios.get(0));
+            
+        }catch(java.lang.NumberFormatException trono){
+            
+        }
+    /*  if (rol != null) {
             String rolRegistrado = rolNuevo.toString();
         }
         Object nacionalidadNueva = nacionalidad.getSelectedItem();
@@ -194,12 +223,12 @@ public class registrarUsuario extends javax.swing.JFrame {
         correoElectronico.setText("");
         nombreUsuarioNuevo.setText("");
         apellidoUsuarioNuevo.setText("");
-        sobrenombre.setText("");
-        telefono.setText("");
+        sobrenombreUsuario.setText("");
+        telefonoUsuario.setText("");
         fechaNacimientoNuevoUsuario.setText("dd/mm/aaaa");
-        rol.setSelectedItem(null);
-        nacionalidad.setSelectedItem(null);
-        genero.setSelectedItem(null);
+        rolUsuario.setSelectedItem(null);
+        nacionalidadUsuario.setSelectedItem(null);
+        generoUsuario.setSelectedItem(null);
         nuevaPassword.setText("");
         confirmarNuevaPassword.setText("");
     }//GEN-LAST:event_limpiarDatosActionPerformed
@@ -216,7 +245,7 @@ public class registrarUsuario extends javax.swing.JFrame {
     private javax.swing.JPasswordField confirmarNuevaPassword;
     private javax.swing.JTextField correoElectronico;
     private javax.swing.JTextField fechaNacimientoNuevoUsuario;
-    private javax.swing.JComboBox<String> genero;
+    private javax.swing.JComboBox<String> generoUsuario;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -230,14 +259,14 @@ public class registrarUsuario extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JButton limpiarDatos;
-    private javax.swing.JComboBox<String> nacionalidad;
+    private javax.swing.JComboBox<String> nacionalidadUsuario;
     private javax.swing.JTextField nombreUsuarioNuevo;
     private javax.swing.JPasswordField nuevaPassword;
     private javax.swing.JButton registrarDatos;
     private javax.swing.JButton regregarLogin;
-    private javax.swing.JComboBox<String> rol;
-    private javax.swing.JTextField sobrenombre;
+    private javax.swing.JComboBox<String> rolUsuario;
+    private javax.swing.JTextField sobrenombreUsuario;
     private javax.swing.JButton subirFoto;
-    private javax.swing.JTextField telefono;
+    private javax.swing.JTextField telefonoUsuario;
     // End of variables declaration//GEN-END:variables
 }

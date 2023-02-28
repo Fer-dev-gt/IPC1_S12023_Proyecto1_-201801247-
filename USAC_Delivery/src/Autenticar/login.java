@@ -2,7 +2,7 @@ package Autenticar;
 import panelesAdministrador.registrarUsuario;
 
 public class login extends javax.swing.JPanel{
-registrarUsuario registrarUsuario = new registrarUsuario();
+registrarUsuario registrarUsuarios1 = new registrarUsuario();
 
     public login() {
         initComponents();
@@ -49,7 +49,7 @@ registrarUsuario registrarUsuario = new registrarUsuario();
     }// </editor-fold>//GEN-END:initComponents
 
     private void registrarUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarUsuariosActionPerformed
-        registrarUsuario.setVisible(true);
+        registrarUsuarios1.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_registrarUsuariosActionPerformed
 
