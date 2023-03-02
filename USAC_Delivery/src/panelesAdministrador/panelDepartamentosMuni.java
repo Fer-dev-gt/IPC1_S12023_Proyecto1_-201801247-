@@ -1,8 +1,8 @@
 package panelesAdministrador;
 
-public class panelDepartamentosMuni extends javax.swing.JPanel {
+public class PanelDepartamentosMuni extends javax.swing.JPanel {
     
-    public panelDepartamentosMuni() {
+    public PanelDepartamentosMuni() {
         initComponents();
     }
 

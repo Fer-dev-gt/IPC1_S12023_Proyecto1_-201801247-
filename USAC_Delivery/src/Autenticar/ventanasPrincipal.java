@@ -1,34 +1,34 @@
 package Autenticar;
 import java.awt.BorderLayout;
 import javax.swing.JOptionPane;
-import panelesAdministrador.menuAdministrador;
-import panelesAdministrador.panelDepartamentosMuni;
-import panelesAdministrador.panelKioskos;
-import panelesAdministrador.panelRegionesPrecios;
-import panelesAdministrador.panelReportes;
-import panelesUsuario.menuUsuario;
-import panelesUsuario.panelRegitstrarTarjeta;
-import panelesUsuario.panelDatosFacturacion;
-import panelesUsuario.panelCotizarPaquetes;
-import panelesUsuario.panelRealizarCompra;
-import panelesUsuario.panelDescargarFactura;
-import panelesUsuario.panelVerEnvios;
+import panelesAdministrador.MenuAdministrador;
+import panelesAdministrador.PanelDepartamentosMuni;
+import panelesAdministrador.PanelKioskos;
+import panelesAdministrador.PanelRegionesPrecios;
+import panelesAdministrador.PanelReportes;
+import panelesUsuario.MenuUsuario;
+import panelesUsuario.PanelRegitstrarTarjeta;
+import panelesUsuario.PanelDatosFacturacion;
+import panelesUsuario.PanelCotizarPaquetes;
+import panelesUsuario.PanelRealizarCompra;
+import panelesUsuario.PanelDescargarFactura;
+import panelesUsuario.PanelVerEnvios;
 
 
-public class ventanasPrincipal extends javax.swing.JFrame {
+public class VentanasPrincipal extends javax.swing.JFrame {
     private login login = new login();
-    private menuAdministrador menuAdministrador = new menuAdministrador();
-    private panelDepartamentosMuni panelDepartamentosMuni = new panelDepartamentosMuni();
-    private panelKioskos panelKioskos = new panelKioskos();
-    private panelRegionesPrecios panelRegionesPrecios = new panelRegionesPrecios();
-    private panelReportes panelReportes = new panelReportes();
-    private menuUsuario menuUsuario = new menuUsuario();
-    private panelRegitstrarTarjeta panelRegitstrarTarjeta = new panelRegitstrarTarjeta();
-    private panelDatosFacturacion panelDatosFacturacion = new panelDatosFacturacion();
-    private panelCotizarPaquetes panelCotizarPaquetes = new panelCotizarPaquetes();
-    private panelRealizarCompra panelRealizarCompra = new panelRealizarCompra();
-    private panelDescargarFactura panelDescargarFactura = new panelDescargarFactura();
-    private panelVerEnvios panelVerEnvios = new panelVerEnvios();
+    private MenuAdministrador menuAdministrador = new MenuAdministrador();
+    private PanelDepartamentosMuni panelDepartamentosMuni = new PanelDepartamentosMuni();
+    private PanelKioskos panelKioskos = new PanelKioskos();
+    private PanelRegionesPrecios panelRegionesPrecios = new PanelRegionesPrecios();
+    private PanelReportes panelReportes = new PanelReportes();
+    private MenuUsuario menuUsuario = new MenuUsuario();
+    private PanelRegitstrarTarjeta panelRegitstrarTarjeta = new PanelRegitstrarTarjeta();
+    private PanelDatosFacturacion panelDatosFacturacion = new PanelDatosFacturacion();
+    private PanelCotizarPaquetes panelCotizarPaquetes = new PanelCotizarPaquetes();
+    private PanelRealizarCompra panelRealizarCompra = new PanelRealizarCompra();
+    private PanelDescargarFactura panelDescargarFactura = new PanelDescargarFactura();
+    private PanelVerEnvios panelVerEnvios = new PanelVerEnvios();
     
     
     
@@ -41,7 +41,7 @@ public class ventanasPrincipal extends javax.swing.JFrame {
         panelBase.repaint();
     }
     
-    public ventanasPrincipal() {
+    public VentanasPrincipal() {
         initComponents();        
         cambiarPanel(login);
         opcionesAdministrador.setVisible(false);

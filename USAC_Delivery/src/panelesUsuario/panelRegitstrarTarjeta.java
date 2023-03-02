@@ -1,8 +1,8 @@
 package panelesUsuario;
 
-public class panelRegitstrarTarjeta extends javax.swing.JPanel {
+public class PanelRegitstrarTarjeta extends javax.swing.JPanel {
 
-    public panelRegitstrarTarjeta() {
+    public PanelRegitstrarTarjeta() {
         initComponents();
     }
 

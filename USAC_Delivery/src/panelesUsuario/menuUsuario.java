@@ -8,12 +8,12 @@ package panelesUsuario;
  *
  * @author fernandoorozco
  */
-public class menuUsuario extends javax.swing.JPanel {
+public class MenuUsuario extends javax.swing.JPanel {
 
     /**
      * Creates new form menuUsuario2
      */
-    public menuUsuario() {
+    public MenuUsuario() {
         initComponents();
     }
 

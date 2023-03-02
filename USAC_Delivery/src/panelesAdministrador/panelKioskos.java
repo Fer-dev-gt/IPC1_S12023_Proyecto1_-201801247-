@@ -1,9 +1,9 @@
 package panelesAdministrador;
 
-public class panelKioskos extends javax.swing.JPanel {
+public class PanelKioskos extends javax.swing.JPanel {
 
     
-    public panelKioskos() {
+    public PanelKioskos() {
         initComponents();
     }
 

@@ -1,19 +1,18 @@
 package panelesAdministrador;
-import Autenticar.ventanasPrincipal;
+import Autenticar.VentanasPrincipal;
 import java.util.ArrayList;
 
-public class registrarUsuario extends javax.swing.JFrame {    
-    String correo, nombre, apellido, fechaNacimiento, telefono, sobrenombre;
-    char[] password;
+public class RegistrarUsuario extends javax.swing.JFrame {                              // Atributos de la clase RegistrarUsuario
+    String correo, nombre, apellido, fechaNacimiento, telefono, sobrenombre, password;
     Object rol, genero, nacionalidad;
     
-    public registrarUsuario() {
+    public RegistrarUsuario() {
         initComponents();
     }
     
-    ArrayList <registrarUsuario> listaUsuarios = new ArrayList<registrarUsuario>();
+    ArrayList <RegistrarUsuario> listaUsuarios = new ArrayList<RegistrarUsuario>();
     
-    public ArrayList<registrarUsuario> getListaUsuarios() {
+    public ArrayList<RegistrarUsuario> getListaUsuarios() {
         return listaUsuarios;
     }
     
@@ -149,7 +148,7 @@ public class registrarUsuario extends javax.swing.JFrame {
 
 
     
-    public registrarUsuario(String correo, String nombre, String apellido, String fechaNacimiento, char[] password, String telefono, String sobrenombre, Object rol, Object genero, Object nacionalidad){
+    public RegistrarUsuario(String correo, String nombre, String apellido, String fechaNacimiento, String password, String telefono, String sobrenombre, Object rol, Object genero, Object nacionalidad){
         this.correo = correo;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -164,9 +163,8 @@ public class registrarUsuario extends javax.swing.JFrame {
     
     
     private void registrarDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarDatosActionPerformed
-        
         try{
-            listaUsuarios.add(new registrarUsuario(correoElectronico.getText(), nombreUsuarioNuevo.getText(), apellidoUsuarioNuevo.getText(), fechaNacimientoNuevoUsuario.getText() , nuevaPassword.getPassword(), telefonoUsuario.getText(), sobrenombreUsuario.getText(), rolUsuario.getSelectedItem(), generoUsuario.getSelectedItem(), nacionalidadUsuario.getSelectedItem()));
+            listaUsuarios.add(new RegistrarUsuario(correoElectronico.getText(), nombreUsuarioNuevo.getText(), apellidoUsuarioNuevo.getText(), fechaNacimientoNuevoUsuario.getText() , nuevaPassword.getPassword().toString(), telefonoUsuario.getText(), sobrenombreUsuario.getText(), rolUsuario.getSelectedItem(), generoUsuario.getSelectedItem(), nacionalidadUsuario.getSelectedItem()));
             nombreUsuarioNuevo.setText("");
             System.out.println(listaUsuarios.get(0));
             
@@ -185,7 +183,7 @@ public class registrarUsuario extends javax.swing.JFrame {
             String generoEscogido = nacionalidadNueva.toString();
         }*/
 
-        ventanasPrincipal ventana = new ventanasPrincipal();
+        VentanasPrincipal ventana = new VentanasPrincipal();
         ventana.setVisible(true);
         this.setVisible(false);
         
@@ -196,7 +194,7 @@ public class registrarUsuario extends javax.swing.JFrame {
     }//GEN-LAST:event_fechaNacimientoNuevoUsuarioMouseClicked
 
     private void regregarLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_regregarLoginActionPerformed
-        ventanasPrincipal ventana = new ventanasPrincipal();
+        VentanasPrincipal ventana = new VentanasPrincipal();
         ventana.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_regregarLoginActionPerformed

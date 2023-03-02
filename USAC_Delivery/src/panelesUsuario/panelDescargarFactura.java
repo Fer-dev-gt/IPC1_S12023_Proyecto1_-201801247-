@@ -1,8 +1,8 @@
 package panelesUsuario;
 
-public class panelDescargarFactura extends javax.swing.JPanel {
+public class PanelDescargarFactura extends javax.swing.JPanel {
 
-    public panelDescargarFactura() {
+    public PanelDescargarFactura() {
         initComponents();
     }
 

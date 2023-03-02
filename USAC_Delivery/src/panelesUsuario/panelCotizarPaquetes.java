@@ -1,8 +1,8 @@
 package panelesUsuario;
 
-public class panelCotizarPaquetes extends javax.swing.JPanel {
+public class PanelCotizarPaquetes extends javax.swing.JPanel {
 
-    public panelCotizarPaquetes() {
+    public PanelCotizarPaquetes() {
         initComponents();
     }
 

@@ -1,8 +1,8 @@
 package panelesAdministrador;
 
-public class menuAdministrador extends javax.swing.JPanel {
+public class MenuAdministrador extends javax.swing.JPanel {
 
-    public menuAdministrador() {
+    public MenuAdministrador() {
         initComponents();
     }
 

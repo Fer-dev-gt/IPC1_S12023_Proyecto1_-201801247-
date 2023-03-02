@@ -1,8 +1,8 @@
 package panelesUsuario;
 
-public class panelRealizarCompra extends javax.swing.JPanel {
+public class PanelRealizarCompra extends javax.swing.JPanel {
 
-    public panelRealizarCompra() {
+    public PanelRealizarCompra() {
         initComponents();
     }
 

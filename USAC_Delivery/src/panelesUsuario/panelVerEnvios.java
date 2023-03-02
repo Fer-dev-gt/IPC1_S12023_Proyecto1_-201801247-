@@ -1,8 +1,8 @@
 package panelesUsuario;
 
-public class panelVerEnvios extends javax.swing.JPanel {
+public class PanelVerEnvios extends javax.swing.JPanel {
 
-    public panelVerEnvios() {
+    public PanelVerEnvios() {
         initComponents();
     }
 

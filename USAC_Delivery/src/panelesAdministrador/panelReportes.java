@@ -1,7 +1,7 @@
 package panelesAdministrador;
 
-public class panelReportes extends javax.swing.JPanel {
-    public panelReportes() {
+public class PanelReportes extends javax.swing.JPanel {
+    public PanelReportes() {
         initComponents();
     }
 
