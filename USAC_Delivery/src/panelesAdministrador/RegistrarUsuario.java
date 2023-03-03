@@ -5,7 +5,8 @@ import javax.swing.JOptionPane;
 
 public class RegistrarUsuario extends javax.swing.JFrame {                              
     String correo, nombre, apellido, fechaNacimiento, telefono, sobrenombre, password;      // Atributos de la clase RegistrarUsuario
-    Object rol, genero, nacionalidad;
+    Object rol, genero, nacionalidad, kioskoEscogido;
+    int dpiUsuario;
     int indexDeUsuarios = 0;
     
     public RegistrarUsuario() {
@@ -14,11 +15,12 @@ public class RegistrarUsuario extends javax.swing.JFrame {
         kioskosDisponibles.setVisible(false);
     }
     
-    public RegistrarUsuario(String correo, String nombre, String apellido, String fechaNacimiento, String password, String telefono, String sobrenombre,
-                                    Object rol, Object genero, Object nacionalidad){
+    public RegistrarUsuario(String correo, String nombre, String apellido, int dpi, String fechaNacimiento, String password, String telefono, String sobrenombre,
+                                    Object rol, Object genero, Object nacionalidad, String kioskoEscogido){
         this.correo = correo;
         this.nombre = nombre;
         this.apellido = apellido;
+        this.dpiUsuario = dpi;
         this.fechaNacimiento = fechaNacimiento;
         this.password = password;
         this.telefono = telefono;
@@ -26,7 +28,9 @@ public class RegistrarUsuario extends javax.swing.JFrame {
         this.rol = rol;
         this.genero = genero;
         this.nacionalidad = nacionalidad;
+        this.kioskoEscogido = kioskoEscogido;
     }   
+
     
     ArrayList <RegistrarUsuario> listaUsuarios = new ArrayList<RegistrarUsuario>();                 // Array de objetos que contiene los usuarios registrados
     public ArrayList<RegistrarUsuario> getListaUsuarios() {
@@ -73,7 +77,6 @@ public class RegistrarUsuario extends javax.swing.JFrame {
         sobrenombreUsuario = new javax.swing.JTextField();
         apellidoUsuarioNuevo = new javax.swing.JTextField();
         fechaNacimientoNuevoUsuario = new javax.swing.JTextField();
-        rolUsuario = new javax.swing.JComboBox<>();
         generoUsuario = new javax.swing.JComboBox<>();
         telefonoUsuario = new javax.swing.JTextField();
         registrarDatos = new javax.swing.JButton();
@@ -88,6 +91,7 @@ public class RegistrarUsuario extends javax.swing.JFrame {
         kioskosDisponiblesLabel = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         dpi = new javax.swing.JTextField();
+        rolUsuario = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -136,15 +140,6 @@ public class RegistrarUsuario extends javax.swing.JFrame {
             }
         });
         getContentPane().add(fechaNacimientoNuevoUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 170, 130, -1));
-
-        rolUsuario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Usuario Individual", "Usuario Empresarial", "Kiosko" }));
-        rolUsuario.setSelectedItem(null);
-        rolUsuario.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                rolUsuarioItemStateChanged(evt);
-            }
-        });
-        getContentPane().add(rolUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 430, -1, -1));
 
         generoUsuario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Femenino", "Masculino" }));
         generoUsuario.setSelectedItem(null);
@@ -196,47 +191,76 @@ public class RegistrarUsuario extends javax.swing.JFrame {
 
         jLabel13.setText("DPI");
         getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, -1, -1));
+
+        dpi.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                dpiMouseExited(evt);
+            }
+        });
         getContentPane().add(dpi, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, 190, -1));
+
+        rolUsuario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Usuario Individual", "Usuario Empresarial", "Kiosko" }));
+        rolUsuario.setSelectedItem(null);
+        rolUsuario.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                rolUsuarioItemStateChanged(evt);
+            }
+        });
+        getContentPane().add(rolUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 430, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
     
     private void registrarDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarDatosActionPerformed
        char[] password = nuevaPassword.getPassword();
+       char[] confirmarpassword = confirmarNuevaPassword.getPassword();
        String passwordString = new String(password);
+       String confirmaPasswordString = new String(confirmarpassword);
+       String kioskoString = "";
+       System.out.println(confirmaPasswordString);
+       try{
+            if(kioskosDisponibles.getSelectedItem().toString() != "null"){
+                kioskoString = kioskosDisponibles.getSelectedItem().toString();}
+       }catch(java.lang.NullPointerException vacio){
+            kioskoString = "";
+       } 
+       if(passwordString.equals(confirmaPasswordString)){
             if(buenaPassword(passwordString)){
                 try{
-                    listaUsuarios.add(new RegistrarUsuario(correoElectronico.getText(), nombreUsuarioNuevo.getText(), apellidoUsuarioNuevo.getText(), fechaNacimientoNuevoUsuario.getText(),
-                            passwordString, telefonoUsuario.getText(), sobrenombreUsuario.getText(), rolUsuario.getSelectedItem().toString(), generoUsuario.getSelectedItem().toString(), nacionalidadUsuario.getSelectedItem().toString()));
+                    listaUsuarios.add(new RegistrarUsuario(correoElectronico.getText(), nombreUsuarioNuevo.getText(), apellidoUsuarioNuevo.getText(), dpiUsuario, fechaNacimientoNuevoUsuario.getText(),
+                            passwordString, telefonoUsuario.getText(), sobrenombreUsuario.getText(), rolUsuario.getSelectedItem().toString(), generoUsuario.getSelectedItem().toString(), nacionalidadUsuario.getSelectedItem().toString(), kioskoString));
                     System.out.println("Contraseña Aceptada");
                     System.out.println("Iteracion #" + indexDeUsuarios);
                     System.out.println("El correro registrado es: " + listaUsuarios.get(indexDeUsuarios).getCorreo());
                     System.out.println("El nombre registrado es: " + listaUsuarios.get(indexDeUsuarios).getNombre());
                     System.out.println("El apellido registrado es: " + listaUsuarios.get(indexDeUsuarios).getApellido());
+                    System.out.println("El dpi registrado es: " + listaUsuarios.get(indexDeUsuarios).getDpiUsuario());
                     System.out.println("La fecha registrada es: " + listaUsuarios.get(indexDeUsuarios).getFechaNacimiento());
                     System.out.println("La contraseña registrada es: " + listaUsuarios.get(indexDeUsuarios).getPassword());
                     System.out.println("El telefono registrado es: " + listaUsuarios.get(indexDeUsuarios).getTelefono());
                     System.out.println("El sobrenombre registrado es: " + listaUsuarios.get(indexDeUsuarios).getSobrenombre());
                     System.out.println("El rol registrado es: " + listaUsuarios.get(indexDeUsuarios).getRol());
+                    System.out.println("El kiosko registrado es: " + listaUsuarios.get(indexDeUsuarios).getKioskoEscogido());
                     System.out.println("El genero registrado es: " + listaUsuarios.get(indexDeUsuarios).getGenero());
                     System.out.println("La nacionalidad registrado es: " + listaUsuarios.get(indexDeUsuarios).getNacionalidad() + "\n\n");
                     indexDeUsuarios++;
+                    /*VentanasPrincipal ventana = new VentanasPrincipal();
+                    ventana.setVisible(true);
+                    this.setVisible(false);*/
                 }catch(java.lang.NumberFormatException trono){
                     JOptionPane.showMessageDialog(null, "Ingrese numeros en vez de letras");
                 }catch(java.lang.NullPointerException nulo){
                     JOptionPane.showMessageDialog(null, "No es permitido dejar el campo en blanco");
                 }
             }else{
-                JOptionPane.showMessageDialog(null, "La contraseña debe tener al menos: \nUna letra mayuscula\nUn número\nUn caracter especial");
+                JOptionPane.showMessageDialog(null, "La contraseña debe tener al menos: \nUna letra mayuscula\nUna letra minuscula\nUn número\nUn caracter especial");
                 nuevaPassword.setText("");
                 confirmarNuevaPassword.setText("");
                 System.out.println("Contraseña Rechazada");
             }
- 
-        /*VentanasPrincipal ventana = new VentanasPrincipal();
-        ventana.setVisible(true);
-        this.setVisible(false);*/
-        
+        }else{
+           JOptionPane.showMessageDialog(null, "Las contraseñas tienen que ser iguales");
+        }   
     }//GEN-LAST:event_registrarDatosActionPerformed
 
     private void fechaNacimientoNuevoUsuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fechaNacimientoNuevoUsuarioMouseClicked
@@ -260,24 +284,27 @@ public class RegistrarUsuario extends javax.swing.JFrame {
             fechaNacimientoNuevoUsuario.setText("dd/mm/aaaa");
             nuevaPassword.setText("");
             confirmarNuevaPassword.setText("");
-            rolUsuario.setSelectedIndex(-1);
-            nacionalidadUsuario.setSelectedIndex(-1);
-            generoUsuario.setSelectedIndex(-1);
+            nacionalidadUsuario.setSelectedItem(null);
+            generoUsuario.setSelectedItem(null);
+            rolUsuario.setSelectedItem(null);
         }catch(java.lang.NullPointerException apuntaHaciaNulo){
             System.out.println("Error");    
             
         }
     }//GEN-LAST:event_limpiarDatosActionPerformed
 
+    private void dpiMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dpiMouseExited
+       try {
+            dpiUsuario = Integer.parseInt(dpi.getText());
+       } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "Dato invalido: dpi tiene que ser un numero ");
+            System.out.println("Dato invalido: dpi tiene que ser un numero");
+            dpi.setText("");
+       }
+    }//GEN-LAST:event_dpiMouseExited
+
     private void rolUsuarioItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_rolUsuarioItemStateChanged
-        String rolEscogido = rolUsuario.getSelectedItem().toString();
-        if(rolEscogido == "Kiosko"){
-            kioskosDisponiblesLabel.setVisible(true);
-            kioskosDisponibles.setVisible(true);
-        }else{
-            kioskosDisponiblesLabel.setVisible(false);
-            kioskosDisponibles.setVisible(false);
-        }
+        // TODO add your handling code here:
     }//GEN-LAST:event_rolUsuarioItemStateChanged
 
     
@@ -289,6 +316,13 @@ public class RegistrarUsuario extends javax.swing.JFrame {
     }
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public Object getKioskoEscogido() {
+        return kioskoEscogido;
+    }
+    public void setKioskoEscogido(Object kioskoEscogido) {
+        this.kioskoEscogido = kioskoEscogido;
     }
     
     public String getCorreo() {
@@ -352,6 +386,13 @@ public class RegistrarUsuario extends javax.swing.JFrame {
     }
     public void setNacionalidad(Object nacionalidad) {
         this.nacionalidad = nacionalidad;
+    }
+
+    public int getDpiUsuario() {
+        return dpiUsuario;
+    }
+    public void setDpiUsuario(int dpiUsuario) {
+        this.dpiUsuario = dpiUsuario;
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
