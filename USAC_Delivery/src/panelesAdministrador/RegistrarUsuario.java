@@ -8,6 +8,8 @@ public class RegistrarUsuario extends javax.swing.JFrame {
     
     public RegistrarUsuario() {
         initComponents();
+        kioskosDisponiblesLabel.setVisible(false);
+        kioskosDisponibles.setVisible(false);
     }
     
     public RegistrarUsuario(String correo, String nombre, String apellido, String fechaNacimiento, String password, String telefono, String sobrenombre, Object rol, Object genero, Object nacionalidad){
@@ -130,6 +132,8 @@ public class RegistrarUsuario extends javax.swing.JFrame {
         nacionalidadUsuario = new javax.swing.JComboBox<>();
         regregarLogin = new javax.swing.JButton();
         limpiarDatos = new javax.swing.JButton();
+        kioskosDisponibles = new javax.swing.JComboBox<>();
+        kioskosDisponiblesLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -181,9 +185,14 @@ public class RegistrarUsuario extends javax.swing.JFrame {
 
         rolUsuario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Usuario Individual", "Usuario Empresarial", "Kiosko" }));
         rolUsuario.setSelectedItem(null);
+        rolUsuario.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                rolUsuarioItemStateChanged(evt);
+            }
+        });
         getContentPane().add(rolUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, -1, -1));
 
-        generoUsuario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "F", "M" }));
+        generoUsuario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Femenino", "Masculino" }));
         generoUsuario.setSelectedItem(null);
         getContentPane().add(generoUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 290, -1, -1));
         getContentPane().add(telefonoUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 290, 123, -1));
@@ -224,6 +233,12 @@ public class RegistrarUsuario extends javax.swing.JFrame {
         });
         getContentPane().add(limpiarDatos, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 480, -1, -1));
 
+        kioskosDisponibles.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Miraflores", "Xela", "Portales" }));
+        getContentPane().add(kioskosDisponibles, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 450, -1, -1));
+
+        kioskosDisponiblesLabel.setText("Kioskos Disponibles");
+        getContentPane().add(kioskosDisponiblesLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 420, -1, -1));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
     
@@ -239,6 +254,8 @@ public class RegistrarUsuario extends javax.swing.JFrame {
             
         }catch(java.lang.NumberFormatException trono){
             
+        }catch(java.lang.NullPointerException nulo){
+        
         }
     /*  if (rol != null) {
             String rolRegistrado = rolNuevo.toString();
@@ -269,23 +286,6 @@ public class RegistrarUsuario extends javax.swing.JFrame {
     }//GEN-LAST:event_regregarLoginActionPerformed
 
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     private void limpiarDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_limpiarDatosActionPerformed
         correoElectronico.setText("");
         nombreUsuarioNuevo.setText("");
@@ -298,7 +298,19 @@ public class RegistrarUsuario extends javax.swing.JFrame {
         generoUsuario.setSelectedItem(null);
         nuevaPassword.setText("");
         confirmarNuevaPassword.setText("");
+        
     }//GEN-LAST:event_limpiarDatosActionPerformed
+
+    private void rolUsuarioItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_rolUsuarioItemStateChanged
+        String rolEscogido = rolUsuario.getSelectedItem().toString();
+        if(rolEscogido == "Kiosko"){
+            kioskosDisponiblesLabel.setVisible(true);
+            kioskosDisponibles.setVisible(true);
+        }else{
+            kioskosDisponiblesLabel.setVisible(false);
+            kioskosDisponibles.setVisible(false);
+        }
+    }//GEN-LAST:event_rolUsuarioItemStateChanged
 
     
     
@@ -325,6 +337,8 @@ public class RegistrarUsuario extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JComboBox<String> kioskosDisponibles;
+    private javax.swing.JLabel kioskosDisponiblesLabel;
     private javax.swing.JButton limpiarDatos;
     private javax.swing.JComboBox<String> nacionalidadUsuario;
     private javax.swing.JTextField nombreUsuarioNuevo;

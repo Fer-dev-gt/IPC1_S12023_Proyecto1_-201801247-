@@ -62,6 +62,7 @@ public class VentanasPrincipal extends javax.swing.JFrame {
         btnRegionesPrecios = new javax.swing.JButton();
         btnDepartamentoMunicipios = new javax.swing.JButton();
         btnreportes = new javax.swing.JButton();
+        cerrarSesionUsuario = new javax.swing.JButton();
         opcionesUsuario = new javax.swing.JPanel();
         registrarTarjeta = new javax.swing.JButton();
         datosFacturacion = new javax.swing.JButton();
@@ -69,6 +70,7 @@ public class VentanasPrincipal extends javax.swing.JFrame {
         realizarCompra = new javax.swing.JButton();
         descargarFacturaGuia = new javax.swing.JButton();
         verEnviosSolicitados = new javax.swing.JButton();
+        cerrarSesionAdmin = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -146,6 +148,14 @@ public class VentanasPrincipal extends javax.swing.JFrame {
             }
         });
 
+        cerrarSesionUsuario.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        cerrarSesionUsuario.setText("Cerrar Sesión");
+        cerrarSesionUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cerrarSesionUsuarioActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout opcionesAdministradorLayout = new javax.swing.GroupLayout(opcionesAdministrador);
         opcionesAdministrador.setLayout(opcionesAdministradorLayout);
         opcionesAdministradorLayout.setHorizontalGroup(
@@ -161,19 +171,26 @@ public class VentanasPrincipal extends javax.swing.JFrame {
                         .addComponent(btnRegionesPrecios)
                         .addGap(29, 29, 29)
                         .addComponent(btnDepartamentoMunicipios, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(255, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 106, Short.MAX_VALUE)
+                .addComponent(cerrarSesionUsuario)
+                .addContainerGap())
         );
         opcionesAdministradorLayout.setVerticalGroup(
             opcionesAdministradorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(opcionesAdministradorLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(opcionesAdministradorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnManejarKioskos)
-                    .addComponent(btnreportes))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(opcionesAdministradorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnRegionesPrecios)
-                    .addComponent(btnDepartamentoMunicipios))
+                .addGroup(opcionesAdministradorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(opcionesAdministradorLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(opcionesAdministradorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnManejarKioskos)
+                            .addComponent(btnreportes))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(opcionesAdministradorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnRegionesPrecios)
+                            .addComponent(btnDepartamentoMunicipios)))
+                    .addGroup(opcionesAdministradorLayout.createSequentialGroup()
+                        .addGap(29, 29, 29)
+                        .addComponent(cerrarSesionUsuario)))
                 .addContainerGap(12, Short.MAX_VALUE))
         );
 
@@ -233,6 +250,14 @@ public class VentanasPrincipal extends javax.swing.JFrame {
             }
         });
 
+        cerrarSesionAdmin.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        cerrarSesionAdmin.setText("Cerrar Sesión");
+        cerrarSesionAdmin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cerrarSesionAdminActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout opcionesUsuarioLayout = new javax.swing.GroupLayout(opcionesUsuario);
         opcionesUsuario.setLayout(opcionesUsuarioLayout);
         opcionesUsuarioLayout.setHorizontalGroup(
@@ -252,21 +277,28 @@ public class VentanasPrincipal extends javax.swing.JFrame {
                 .addGroup(opcionesUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(cotizarPaquetes, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(verEnviosSolicitados, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(cerrarSesionAdmin)
+                .addGap(83, 83, 83))
         );
         opcionesUsuarioLayout.setVerticalGroup(
             opcionesUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(opcionesUsuarioLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(opcionesUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(registrarTarjeta)
-                    .addComponent(datosFacturacion)
-                    .addComponent(cotizarPaquetes))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(opcionesUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(realizarCompra)
-                    .addComponent(descargarFacturaGuia)
-                    .addComponent(verEnviosSolicitados))
+                .addGroup(opcionesUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(opcionesUsuarioLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(opcionesUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(registrarTarjeta)
+                            .addComponent(datosFacturacion)
+                            .addComponent(cotizarPaquetes))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(opcionesUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(realizarCompra)
+                            .addComponent(descargarFacturaGuia)
+                            .addComponent(verEnviosSolicitados)))
+                    .addGroup(opcionesUsuarioLayout.createSequentialGroup()
+                        .addGap(23, 23, 23)
+                        .addComponent(cerrarSesionAdmin)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -280,7 +312,7 @@ public class VentanasPrincipal extends javax.swing.JFrame {
                         .addComponent(panelAbajo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(opcionesAdministrador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 76, Short.MAX_VALUE))
+                        .addGap(0, 71, Short.MAX_VALUE))
                     .addComponent(panelBase, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(opcionesUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
@@ -359,6 +391,17 @@ public class VentanasPrincipal extends javax.swing.JFrame {
         cambiarPanel(panelVerEnvios);
     }//GEN-LAST:event_verEnviosSolicitadosActionPerformed
 
+    private void cerrarSesionAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cerrarSesionAdminActionPerformed
+        VentanasPrincipal ventana = new VentanasPrincipal();
+        ventana.setVisible(true);
+        this.setVisible(false);    }//GEN-LAST:event_cerrarSesionAdminActionPerformed
+
+    private void cerrarSesionUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cerrarSesionUsuarioActionPerformed
+        VentanasPrincipal ventana = new VentanasPrincipal();
+        ventana.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_cerrarSesionUsuarioActionPerformed
+
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -366,6 +409,8 @@ public class VentanasPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton btnManejarKioskos;
     private javax.swing.JButton btnRegionesPrecios;
     private javax.swing.JButton btnreportes;
+    private javax.swing.JButton cerrarSesionAdmin;
+    private javax.swing.JButton cerrarSesionUsuario;
     private javax.swing.JButton cotizarPaquetes;
     private javax.swing.JButton datosFacturacion;
     private javax.swing.JButton descargarFacturaGuia;

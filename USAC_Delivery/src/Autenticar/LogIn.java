@@ -54,6 +54,8 @@ RegistrarUsuario registrarUsuarios1 = new RegistrarUsuario();
     }//GEN-LAST:event_registrarUsuariosActionPerformed
 
 
+
+
     
     
     
