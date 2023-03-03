@@ -16,7 +16,7 @@ import panelesUsuario.PanelVerEnvios;
 
 
 public class VentanasPrincipal extends javax.swing.JFrame {
-    private login login = new login();
+    private LogIn login = new LogIn();
     private MenuAdministrador menuAdministrador = new MenuAdministrador();
     private PanelDepartamentosMuni panelDepartamentosMuni = new PanelDepartamentosMuni();
     private PanelKioskos panelKioskos = new PanelKioskos();

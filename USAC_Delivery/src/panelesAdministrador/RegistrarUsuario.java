@@ -166,7 +166,7 @@ public class RegistrarUsuario extends javax.swing.JFrame {                      
         try{
             listaUsuarios.add(new RegistrarUsuario(correoElectronico.getText(), nombreUsuarioNuevo.getText(), apellidoUsuarioNuevo.getText(), fechaNacimientoNuevoUsuario.getText() , nuevaPassword.getPassword().toString(), telefonoUsuario.getText(), sobrenombreUsuario.getText(), rolUsuario.getSelectedItem(), generoUsuario.getSelectedItem(), nacionalidadUsuario.getSelectedItem()));
             nombreUsuarioNuevo.setText("");
-            System.out.println(listaUsuarios.get(0));
+            System.out.println(listaUsuarios);
             
         }catch(java.lang.NumberFormatException trono){
             

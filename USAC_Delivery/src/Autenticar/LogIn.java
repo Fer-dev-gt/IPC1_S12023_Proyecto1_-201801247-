@@ -1,10 +1,10 @@
 package Autenticar;
 import panelesAdministrador.RegistrarUsuario;
 
-public class login extends javax.swing.JPanel{
+public class LogIn extends javax.swing.JPanel{
 RegistrarUsuario registrarUsuarios1 = new RegistrarUsuario();
 
-    public login() {
+    public LogIn() {
         initComponents();
         this.setLocation(0,0);
     }
