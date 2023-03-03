@@ -2,12 +2,95 @@ package panelesAdministrador;
 import Autenticar.VentanasPrincipal;
 import java.util.ArrayList;
 
-public class RegistrarUsuario extends javax.swing.JFrame {                              // Atributos de la clase RegistrarUsuario
-    String correo, nombre, apellido, fechaNacimiento, telefono, sobrenombre, password;
+public class RegistrarUsuario extends javax.swing.JFrame {                              
+    String correo, nombre, apellido, fechaNacimiento, telefono, sobrenombre, password;      // Atributos de la clase RegistrarUsuario
     Object rol, genero, nacionalidad;
     
     public RegistrarUsuario() {
         initComponents();
+    }
+    
+    public RegistrarUsuario(String correo, String nombre, String apellido, String fechaNacimiento, String password, String telefono, String sobrenombre, Object rol, Object genero, Object nacionalidad){
+        this.correo = correo;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.fechaNacimiento = fechaNacimiento;
+        this.password = password;
+        this.telefono = telefono;
+        this.sobrenombre = sobrenombre;
+        this.rol = rol;
+        this.genero = genero;
+        this.nacionalidad = nacionalidad;
+    }   
+
+    public String getCorreo() {
+        return correo;
+    }
+    public void setCorreo(String correo) {
+        this.correo = correo;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+
+    public String getFechaNacimiento() {
+        return fechaNacimiento;
+    }
+    public void setFechaNacimiento(String fechaNacimiento) {
+        this.fechaNacimiento = fechaNacimiento;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
+
+    public String getSobrenombre() {
+        return sobrenombre;
+    }
+    public void setSobrenombre(String sobrenombre) {
+        this.sobrenombre = sobrenombre;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public Object getRol() {
+        return rol;
+    }
+    public void setRol(Object rol) {
+        this.rol = rol;
+    }
+
+    public Object getGenero() {
+        return genero;
+    }
+    public void setGenero(Object genero) {
+        this.genero = genero;
+    }
+
+    public Object getNacionalidad() {
+        return nacionalidad;
+    }
+    public void setNacionalidad(Object nacionalidad) {
+        this.nacionalidad = nacionalidad;
     }
     
     ArrayList <RegistrarUsuario> listaUsuarios = new ArrayList<RegistrarUsuario>();
@@ -15,8 +98,6 @@ public class RegistrarUsuario extends javax.swing.JFrame {                      
     public ArrayList<RegistrarUsuario> getListaUsuarios() {
         return listaUsuarios;
     }
-    
-
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -145,28 +226,16 @@ public class RegistrarUsuario extends javax.swing.JFrame {                      
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-
-    
-    public RegistrarUsuario(String correo, String nombre, String apellido, String fechaNacimiento, String password, String telefono, String sobrenombre, Object rol, Object genero, Object nacionalidad){
-        this.correo = correo;
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.fechaNacimiento = fechaNacimiento;
-        this.password = password;
-        this.telefono = telefono;
-        this.sobrenombre = sobrenombre;
-        this.rol = rol;
-        this.genero = genero;
-        this.nacionalidad = nacionalidad;
-    }
-    
     
     private void registrarDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarDatosActionPerformed
         try{
-            listaUsuarios.add(new RegistrarUsuario(correoElectronico.getText(), nombreUsuarioNuevo.getText(), apellidoUsuarioNuevo.getText(), fechaNacimientoNuevoUsuario.getText() , nuevaPassword.getPassword().toString(), telefonoUsuario.getText(), sobrenombreUsuario.getText(), rolUsuario.getSelectedItem(), generoUsuario.getSelectedItem(), nacionalidadUsuario.getSelectedItem()));
+            listaUsuarios.add(new RegistrarUsuario(correoElectronico.getText(), nombreUsuarioNuevo.getText(), apellidoUsuarioNuevo.getText(), fechaNacimientoNuevoUsuario.getText() , nuevaPassword.getPassword().toString(), telefonoUsuario.getText(), sobrenombreUsuario.getText(), rolUsuario.getSelectedItem().toString(), generoUsuario.getSelectedItem().toString(), nacionalidadUsuario.getSelectedItem().toString()));
             nombreUsuarioNuevo.setText("");
-            System.out.println(listaUsuarios);
+            System.out.println(listaUsuarios.get(0).getNombre());
+            System.out.println(listaUsuarios.get(0).getApellido());
+            System.out.println(listaUsuarios.get(0).getGenero());
+            System.out.println(listaUsuarios.get(0).getRol());
+            System.out.println(listaUsuarios.get(0).getNacionalidad());
             
         }catch(java.lang.NumberFormatException trono){
             
