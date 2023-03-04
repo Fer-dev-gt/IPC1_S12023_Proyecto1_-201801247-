@@ -192,20 +192,15 @@ public class RegistrarUsuario extends javax.swing.JFrame {
         jLabel13.setText("DPI");
         getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, -1, -1));
 
-        dpi.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                dpiMouseExited(evt);
+        dpi.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                dpiFocusLost(evt);
             }
         });
         getContentPane().add(dpi, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, 190, -1));
 
         rolUsuario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Usuario Individual", "Usuario Empresarial", "Kiosko" }));
         rolUsuario.setSelectedItem(null);
-        rolUsuario.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                rolUsuarioItemStateChanged(evt);
-            }
-        });
         getContentPane().add(rolUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 430, -1, -1));
 
         pack();
@@ -293,21 +288,15 @@ public class RegistrarUsuario extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_limpiarDatosActionPerformed
 
-    private void dpiMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dpiMouseExited
-       try {
+    private void dpiFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_dpiFocusLost
+        try {
             dpiUsuario = Integer.parseInt(dpi.getText());
        } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(null, "Dato invalido: dpi tiene que ser un numero ");
             System.out.println("Dato invalido: dpi tiene que ser un numero");
             dpi.setText("");
        }
-    }//GEN-LAST:event_dpiMouseExited
-
-    private void rolUsuarioItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_rolUsuarioItemStateChanged
-        // TODO add your handling code here:
-    }//GEN-LAST:event_rolUsuarioItemStateChanged
-
-    
+    }//GEN-LAST:event_dpiFocusLost
     
     
     // Declaracion de "Getters y Setters"

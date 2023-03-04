@@ -89,7 +89,7 @@ public class VentanasPrincipal extends javax.swing.JFrame {
 
         panelAbajo.setBackground(new java.awt.Color(0, 153, 153));
 
-        ingresoLogIn.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        ingresoLogIn.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
         ingresoLogIn.setText("Ingresar");
         ingresoLogIn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -101,16 +101,16 @@ public class VentanasPrincipal extends javax.swing.JFrame {
         panelAbajo.setLayout(panelAbajoLayout);
         panelAbajoLayout.setHorizontalGroup(
             panelAbajoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelAbajoLayout.createSequentialGroup()
-                .addContainerGap(108, Short.MAX_VALUE)
-                .addComponent(ingresoLogIn)
-                .addGap(105, 105, 105))
+            .addGroup(panelAbajoLayout.createSequentialGroup()
+                .addGap(68, 68, 68)
+                .addComponent(ingresoLogIn, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(94, Short.MAX_VALUE))
         );
         panelAbajoLayout.setVerticalGroup(
             panelAbajoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelAbajoLayout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addComponent(ingresoLogIn)
+                .addContainerGap()
+                .addComponent(ingresoLogIn, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -403,7 +403,11 @@ public class VentanasPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_cerrarSesionUsuarioActionPerformed
 
     
-
+    
+    
+    
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnDepartamentoMunicipios;
     private javax.swing.JButton btnManejarKioskos;
