@@ -391,16 +391,17 @@ public class VentanasPrincipal extends javax.swing.JFrame {
         cambiarPanel(panelVerEnvios);
     }//GEN-LAST:event_verEnviosSolicitadosActionPerformed
 
-    private void cerrarSesionAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cerrarSesionAdminActionPerformed
-        VentanasPrincipal ventana = new VentanasPrincipal();
-        ventana.setVisible(true);
-        this.setVisible(false);    }//GEN-LAST:event_cerrarSesionAdminActionPerformed
-
     private void cerrarSesionUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cerrarSesionUsuarioActionPerformed
-        VentanasPrincipal ventana = new VentanasPrincipal();
-        ventana.setVisible(true);
-        this.setVisible(false);
+        cambiarPanel(login);
+        panelAbajo.setVisible(true);
+        opcionesUsuario.setVisible(false);
     }//GEN-LAST:event_cerrarSesionUsuarioActionPerformed
+
+    private void cerrarSesionAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cerrarSesionAdminActionPerformed
+        cambiarPanel(login);
+        opcionesAdministrador.setVisible(false);
+        panelAbajo.setVisible(true);
+    }//GEN-LAST:event_cerrarSesionAdminActionPerformed
 
     
     

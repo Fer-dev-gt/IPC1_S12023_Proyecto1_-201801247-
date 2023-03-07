@@ -263,8 +263,6 @@ public class RegistrarUsuario extends javax.swing.JFrame {
     }//GEN-LAST:event_fechaNacimientoNuevoUsuarioMouseClicked
 
     private void regregarLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_regregarLoginActionPerformed
-        VentanasPrincipal ventana = new VentanasPrincipal();
-        ventana.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_regregarLoginActionPerformed
 

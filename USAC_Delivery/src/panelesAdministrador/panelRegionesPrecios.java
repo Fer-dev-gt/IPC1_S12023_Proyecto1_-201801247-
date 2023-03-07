@@ -133,6 +133,9 @@ public class PanelRegionesPrecios extends javax.swing.JPanel {
          if(!precioEstandar.getText().isEmpty()){
      nuevoPrecioEstandar = Integer.parseInt(precioEstandar.getText());
          }
+         if(!precioEspecial.getText().isEmpty()){
+     nuevoPrecioEspecial = Integer.parseInt(precioEspecial.getText());
+         }
      DefaultTableModel tablaPreciosRegiones = (DefaultTableModel) tablaPrecios.getModel();
      String nuevoPrecioEstandarString = precioEstandar.getText();
      String nuevoPrecioEspecialString = precioEspecial.getText();

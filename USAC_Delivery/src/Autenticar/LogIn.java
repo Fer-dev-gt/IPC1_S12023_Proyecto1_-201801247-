@@ -27,6 +27,7 @@ RegistrarUsuario registrarUsuarios1 = new RegistrarUsuario();
         textFieldCorreo = new javax.swing.JTextField();
         PasswordField = new javax.swing.JPasswordField();
         registrarUsuarios = new javax.swing.JButton();
+        limpiarCasillas = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 153));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -46,12 +47,24 @@ RegistrarUsuario registrarUsuarios1 = new RegistrarUsuario();
             }
         });
         add(registrarUsuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 670, 180, -1));
+
+        limpiarCasillas.setText("Limpiar Casillas");
+        limpiarCasillas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                limpiarCasillasActionPerformed(evt);
+            }
+        });
+        add(limpiarCasillas, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 640, 180, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void registrarUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarUsuariosActionPerformed
         registrarUsuarios1.setVisible(true);
-        this.setVisible(false);
     }//GEN-LAST:event_registrarUsuariosActionPerformed
+
+    private void limpiarCasillasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_limpiarCasillasActionPerformed
+        PasswordField.setText("");
+        textFieldCorreo.setText("");
+    }//GEN-LAST:event_limpiarCasillasActionPerformed
 
 
     
@@ -70,6 +83,7 @@ RegistrarUsuario registrarUsuarios1 = new RegistrarUsuario();
     private javax.swing.JPasswordField PasswordField;
     private javax.swing.JLabel labelCorreo;
     private javax.swing.JLabel labelPassword;
+    private javax.swing.JButton limpiarCasillas;
     private javax.swing.JButton registrarUsuarios;
     private javax.swing.JTextField textFieldCorreo;
     // End of variables declaration//GEN-END:variables
