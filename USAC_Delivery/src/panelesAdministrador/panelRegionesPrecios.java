@@ -7,7 +7,7 @@ public class PanelRegionesPrecios extends javax.swing.JPanel {
     int nuevoPrecioEstandar, nuevoPrecioEspecial;
     
     public PanelRegionesPrecios() {
-        listaPreciosRegiones[0][0] = "(M) Metropolitana:";
+        listaPreciosRegiones[0][0] = "(M) Metropolitana";
         listaPreciosRegiones[0][1] = "35.00";
         listaPreciosRegiones[0][2] = "25.00";
         
@@ -27,7 +27,7 @@ public class PanelRegionesPrecios extends javax.swing.JPanel {
         listaPreciosRegiones[4][1] = "34.00";
         listaPreciosRegiones[4][2] = "29.00";
         
-        listaPreciosRegiones[5][0] = "(NOC) Noroccidente:";
+        listaPreciosRegiones[5][0] = "(NOC) Noroccidente";
         listaPreciosRegiones[5][1] = "44.50";
         listaPreciosRegiones[5][2] = "40.00";
                 
@@ -129,22 +129,39 @@ public class PanelRegionesPrecios extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void actualizarPreciosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizarPreciosActionPerformed
+     try{
+         if(!precioEstandar.getText().isEmpty()){
+     nuevoPrecioEstandar = Integer.parseInt(precioEstandar.getText());
+         }
+     DefaultTableModel tablaPreciosRegiones = (DefaultTableModel) tablaPrecios.getModel();
      String nuevoPrecioEstandarString = precioEstandar.getText();
      String nuevoPrecioEspecialString = precioEspecial.getText();
-     System.out.println(codigoRegion);
-     int regionToFind = codigoRegion.getSelectedIndex();
-     String regioToFindString = regionToFind.toString();
-     DefaultTableModel tablaPreciosRegiones = (DefaultTableModel) tablaPrecios.getModel();
+     String regionToFind = codigoRegion.getSelectedItem().toString();
      
      for (int i = 0; i < tablaPreciosRegiones.getRowCount(); i++) {
-        String regionSeleccionada = (String) tablaPreciosRegiones.getValueAt(i, 0);
+        String regionSeleccionada = (String) tablaPreciosRegiones.getValueAt(i, 0);                 // Obtiene el Valor de fila seleccionada
         if (regionSeleccionada.equals(regionToFind)) {
-            // update the value in the specified column of the matching row
-            tablaPreciosRegiones.setValueAt(nuevoPrecioEstandarString, i, 1);
-            break; // stop searching after the first match is found
+            if(!precioEstandar.getText().isEmpty()){                                                        // Verifica si hay un nuevo valor en Precio Especial
+                tablaPreciosRegiones.setValueAt(nuevoPrecioEstandarString, i, 1);
+            }
+            if(!precioEspecial.getText().isEmpty()){                                                        // Verifica si hay un nuevo valor en Precio Especial
+                tablaPreciosRegiones.setValueAt(nuevoPrecioEspecialString, i, 2);
+                System.out.println("Precio Especial Actualizado");
+            }
+            tablaPreciosRegiones.fireTableDataChanged();                                                    // Actualiza los valores en la tabla
+            JOptionPane.showMessageDialog(null, "SE ACTUALIZARON LOS PRECIOS");
+            precioEspecial.setText("");
+            precioEstandar.setText("");
+            codigoRegion.setSelectedItem(null);
+            break; 
          }
-     }
-     
+        }
+     }catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "Dato Invalido, Ingrese un numero");
+            precioEstandar.setText("");
+       }catch(java.lang.NullPointerException comboBoxNull){
+            JOptionPane.showMessageDialog(null, "Seleccione una region");
+       }
     }//GEN-LAST:event_actualizarPreciosActionPerformed
 
     private void precioEstandarFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_precioEstandarFocusLost
