@@ -17,6 +17,11 @@ RegistrarUsuario registrarUsuarios1 = new RegistrarUsuario();
         char[] password = PasswordField.getPassword();
         return new String(password);
     }
+    
+        public void resetearCampos(){
+        textFieldCorreo.setText("");
+        PasswordField.setText("");
+    }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents

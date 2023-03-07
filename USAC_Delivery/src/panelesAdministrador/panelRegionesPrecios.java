@@ -4,7 +4,7 @@ import javax.swing.table.DefaultTableModel;
 
 public class PanelRegionesPrecios extends javax.swing.JPanel {
     public String[][] listaPreciosRegiones = new String[6][4];
-    int nuevoPrecioEstandar, nuevoPrecioEspecial;
+    double nuevoPrecioEstandar, nuevoPrecioEspecial;
     
     public PanelRegionesPrecios() {
         listaPreciosRegiones[0][0] = "(M) Metropolitana";
@@ -131,10 +131,10 @@ public class PanelRegionesPrecios extends javax.swing.JPanel {
     private void actualizarPreciosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizarPreciosActionPerformed
      try{
          if(!precioEstandar.getText().isEmpty()){
-     nuevoPrecioEstandar = Integer.parseInt(precioEstandar.getText());
+     nuevoPrecioEstandar = Double.parseDouble(precioEstandar.getText());
          }
          if(!precioEspecial.getText().isEmpty()){
-     nuevoPrecioEspecial = Integer.parseInt(precioEspecial.getText());
+     nuevoPrecioEspecial = Double.parseDouble(precioEspecial.getText());
          }
      DefaultTableModel tablaPreciosRegiones = (DefaultTableModel) tablaPrecios.getModel();
      String nuevoPrecioEstandarString = precioEstandar.getText();
@@ -169,7 +169,7 @@ public class PanelRegionesPrecios extends javax.swing.JPanel {
 
     private void precioEstandarFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_precioEstandarFocusLost
         try {
-            nuevoPrecioEstandar = Integer.parseInt(precioEstandar.getText());
+            nuevoPrecioEstandar = Double.parseDouble(precioEstandar.getText());
        } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(null, "Dato Invalido, Ingrese un numero");
             System.out.println("Dato Invalido");
@@ -179,7 +179,7 @@ public class PanelRegionesPrecios extends javax.swing.JPanel {
 
     private void precioEspecialFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_precioEspecialFocusLost
         try {
-            nuevoPrecioEspecial = Integer.parseInt(precioEspecial.getText());
+            nuevoPrecioEspecial = Double.parseDouble(precioEspecial.getText());
        } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(null, "Dato Invalido, Ingrese un numero");
             System.out.println("Dato Invalido");

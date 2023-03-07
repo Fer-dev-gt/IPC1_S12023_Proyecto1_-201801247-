@@ -334,10 +334,12 @@ public class VentanasPrincipal extends javax.swing.JFrame {
 
     private void ingresoLogInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ingresoLogInActionPerformed
         if(login.getUsuario().equals("a") && login.getClave().equals("a")){
+            login.resetearCampos();
             cambiarPanel(menuAdministrador);
             panelAbajo.setVisible(false);
             opcionesAdministrador.setVisible(true);
         }else if(login.getUsuario().equals("c") && login.getClave().equals("c")){
+            login.resetearCampos();
             cambiarPanel(menuUsuario);
             panelAbajo.setVisible(false);
             opcionesUsuario.setVisible(true);
