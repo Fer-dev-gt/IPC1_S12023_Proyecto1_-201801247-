@@ -135,13 +135,6 @@ RegistrarUsuario registrarUsuarios1 = new RegistrarUsuario();
     
     
     
-    
-    
-    
-    
-    
-    
-    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPasswordField PasswordField;
     private javax.swing.JLabel labelCorreo;

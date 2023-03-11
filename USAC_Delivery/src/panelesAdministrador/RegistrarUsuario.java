@@ -20,7 +20,6 @@ public class RegistrarUsuario extends javax.swing.JFrame {
         initComponents();
         kioskosDisponiblesLabel.setVisible(false);
         kioskosDisponibles.setVisible(false);
-        initComponents();
         rutaImagenDefecto=getClass().getResource("/img/fotoDefault.png").toString();
         rutaImagenDefecto=rutaImagenDefecto.replace("file:/", "");        
         fotoActual(rutaImagenDefecto.toString());
@@ -106,7 +105,7 @@ public class RegistrarUsuario extends javax.swing.JFrame {
         correoElectronico = new javax.swing.JTextField();
         nombreUsuarioNuevo = new javax.swing.JTextField();
         sobrenombreUsuario = new javax.swing.JTextField();
-        apellidoUsuarioNuevo = new javax.swing.JTextField();
+        dpiTextField = new javax.swing.JTextField();
         fechaNacimientoNuevoUsuario = new javax.swing.JTextField();
         generoUsuario = new javax.swing.JComboBox<>();
         telefonoUsuario = new javax.swing.JTextField();
@@ -120,11 +119,11 @@ public class RegistrarUsuario extends javax.swing.JFrame {
         kioskosDisponibles = new javax.swing.JComboBox<>();
         kioskosDisponiblesLabel = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
-        dpi = new javax.swing.JTextField();
         rolUsuario = new javax.swing.JComboBox<>();
         subirImagen = new javax.swing.JButton();
         subirFoto = new javax.swing.JLabel();
         fotoActual = new javax.swing.JLabel();
+        apellidoUsuarioNuevo1 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -164,7 +163,13 @@ public class RegistrarUsuario extends javax.swing.JFrame {
         getContentPane().add(correoElectronico, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 73, 346, -1));
         getContentPane().add(nombreUsuarioNuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 160, 156, -1));
         getContentPane().add(sobrenombreUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 220, 123, -1));
-        getContentPane().add(apellidoUsuarioNuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(224, 160, 156, -1));
+
+        dpiTextField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                dpiTextFieldFocusLost(evt);
+            }
+        });
+        getContentPane().add(dpiTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, 156, -1));
 
         fechaNacimientoNuevoUsuario.setText("dd/mm/aaaa");
         fechaNacimientoNuevoUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -214,7 +219,7 @@ public class RegistrarUsuario extends javax.swing.JFrame {
 
         kioskosDisponibles.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Miraflores", "Xela", "Portales" }));
         kioskosDisponibles.setSelectedItem(null);
-        getContentPane().add(kioskosDisponibles, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 510, -1, -1));
+        getContentPane().add(kioskosDisponibles, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 520, -1, -1));
 
         kioskosDisponiblesLabel.setText("Kioskos Disponibles");
         getContentPane().add(kioskosDisponiblesLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 480, -1, -1));
@@ -222,15 +227,13 @@ public class RegistrarUsuario extends javax.swing.JFrame {
         jLabel13.setText("DPI");
         getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, -1, -1));
 
-        dpi.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                dpiFocusLost(evt);
-            }
-        });
-        getContentPane().add(dpi, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, 190, -1));
-
         rolUsuario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Usuario Individual", "Usuario Empresarial", "Kiosko" }));
         rolUsuario.setSelectedItem(null);
+        rolUsuario.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                rolUsuarioItemStateChanged(evt);
+            }
+        });
         getContentPane().add(rolUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 430, -1, -1));
 
         subirImagen.setText("Elegir imagen");
@@ -253,6 +256,7 @@ public class RegistrarUsuario extends javax.swing.JFrame {
         fotoActual.setText("Foto actual");
         fotoActual.setPreferredSize(new java.awt.Dimension(100, 100));
         getContentPane().add(fotoActual, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 330, -1, -1));
+        getContentPane().add(apellidoUsuarioNuevo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(224, 160, 156, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -273,7 +277,7 @@ public class RegistrarUsuario extends javax.swing.JFrame {
        if(passwordString.equals(confirmaPasswordString)){
             if(buenaPassword(passwordString)){
                 try{
-                    listaUsuarios.add(new RegistrarUsuario(correoElectronico.getText(), nombreUsuarioNuevo.getText(), apellidoUsuarioNuevo.getText(), dpiUsuario, fechaNacimientoNuevoUsuario.getText(),
+                    listaUsuarios.add(new RegistrarUsuario(correoElectronico.getText(), nombreUsuarioNuevo.getText(), dpiTextField.getText(), dpiUsuario, fechaNacimientoNuevoUsuario.getText(),
                             passwordString, telefonoUsuario.getText(), sobrenombreUsuario.getText(), rolUsuario.getSelectedItem().toString(), generoUsuario.getSelectedItem().toString(), nacionalidadUsuario.getSelectedItem().toString(), kioskoString));
                     System.out.println("Contraseña Aceptada");
                     System.out.println("Iteracion #" + indexDeUsuarios);
@@ -321,13 +325,15 @@ public class RegistrarUsuario extends javax.swing.JFrame {
         try{
             correoElectronico.setText("");
             nombreUsuarioNuevo.setText("");
-            apellidoUsuarioNuevo.setText("");
+            dpiTextField.setText("");
             sobrenombreUsuario.setText("");
             telefonoUsuario.setText("");
-            dpi.setText("");
+            dpiTextField.setText("");
             fechaNacimientoNuevoUsuario.setText("dd/mm/aaaa");
             nuevaPassword.setText("");
             confirmarNuevaPassword.setText("");
+            kioskosDisponibles.setVisible(false);
+            kioskosDisponiblesLabel.setVisible(false);
             nacionalidadUsuario.setSelectedItem(null);
             generoUsuario.setSelectedItem(null);
             rolUsuario.setSelectedItem(null);
@@ -336,16 +342,6 @@ public class RegistrarUsuario extends javax.swing.JFrame {
             
         }
     }//GEN-LAST:event_limpiarDatosActionPerformed
-
-    private void dpiFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_dpiFocusLost
-        try {
-            dpiUsuario = Integer.parseInt(dpi.getText());
-       } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(null, "Dato invalido: dpi tiene que ser un numero ");
-            System.out.println("Dato invalido: dpi tiene que ser un numero");
-            dpi.setText("");
-       }
-    }//GEN-LAST:event_dpiFocusLost
 
     private void subirImagenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subirImagenActionPerformed
         fotoActual.setPreferredSize(new Dimension(100, 100));
@@ -360,6 +356,31 @@ public class RegistrarUsuario extends javax.swing.JFrame {
             fotoPreview(rutaFoto);
         }
     }//GEN-LAST:event_subirImagenActionPerformed
+
+    private void dpiTextFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_dpiTextFieldFocusLost
+        try {
+            dpiUsuario = Integer.parseInt(dpiTextField.getText());
+       } catch (NumberFormatException noEsNumero) {
+            JOptionPane.showMessageDialog(null, "Dato invalido: dpi tiene que ser un numero ");
+            System.out.println("Dato invalido: dpi tiene que ser un numero");
+            dpiTextField.setText("");
+       }
+    }//GEN-LAST:event_dpiTextFieldFocusLost
+
+    private void rolUsuarioItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_rolUsuarioItemStateChanged
+        try{
+        String rolEscogido = rolUsuario.getSelectedItem().toString();
+        if("Kiosko".equals(rolEscogido)){
+            kioskosDisponiblesLabel.setVisible(true);
+            kioskosDisponibles.setVisible(true);
+        }else{
+            kioskosDisponiblesLabel.setVisible(false);
+            kioskosDisponibles.setVisible(false);
+        }
+        }catch(java.lang.NullPointerException cambio){
+        }
+        
+    }//GEN-LAST:event_rolUsuarioItemStateChanged
     
     
     // Declaracion de "Getters y Setters"
@@ -448,10 +469,10 @@ public class RegistrarUsuario extends javax.swing.JFrame {
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField apellidoUsuarioNuevo;
+    private javax.swing.JTextField apellidoUsuarioNuevo1;
     private javax.swing.JPasswordField confirmarNuevaPassword;
     private javax.swing.JTextField correoElectronico;
-    private javax.swing.JTextField dpi;
+    private javax.swing.JTextField dpiTextField;
     private javax.swing.JTextField fechaNacimientoNuevoUsuario;
     private javax.swing.JLabel fotoActual;
     private javax.swing.JComboBox<String> generoUsuario;
