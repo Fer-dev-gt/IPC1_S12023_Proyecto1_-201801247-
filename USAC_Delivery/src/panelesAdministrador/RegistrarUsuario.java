@@ -1,6 +1,11 @@
 package panelesAdministrador;
 import Autenticar.VentanasPrincipal;
+import java.awt.Dimension;
+import java.awt.Image;
+import java.io.File;
 import java.util.ArrayList;
+import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 
 public class RegistrarUsuario extends javax.swing.JFrame {                              
@@ -8,11 +13,37 @@ public class RegistrarUsuario extends javax.swing.JFrame {
     Object rol, genero, nacionalidad, kioskoEscogido;
     int dpiUsuario;
     int indexDeUsuarios = 0;
+    private String rutaImagenDefecto = "";
+    private String rutaFoto;
     
     public RegistrarUsuario() {
         initComponents();
         kioskosDisponiblesLabel.setVisible(false);
         kioskosDisponibles.setVisible(false);
+        initComponents();
+        rutaImagenDefecto=getClass().getResource("/img/fotoDefault.png").toString();
+        rutaImagenDefecto=rutaImagenDefecto.replace("file:/", "");        
+        fotoActual(rutaImagenDefecto.toString());
+        this.revalidate();
+        this.repaint();
+    }
+    
+    public void fotoActual(String origen){
+        ImageIcon imageIcon = new ImageIcon(origen);
+        Image image = imageIcon.getImage();
+        Image scaledImage = image.getScaledInstance(100,100, Image.SCALE_SMOOTH);
+        ImageIcon scaledImageIcon = new ImageIcon(scaledImage);
+        fotoActual.setIcon(scaledImageIcon);
+        this.repaint();
+    }
+    
+    public void fotoPreview(String origen){
+        ImageIcon imageIcon = new ImageIcon(origen);
+        Image image = imageIcon.getImage();
+        Image scaledImage = image.getScaledInstance(100,100, Image.SCALE_SMOOTH);
+        ImageIcon scaledImageIcon = new ImageIcon(scaledImage);
+        subirFoto.setIcon(scaledImageIcon);
+        this.repaint();
     }
     
     public RegistrarUsuario(String correo, String nombre, String apellido, int dpi, String fechaNacimiento, String password, String telefono, String sobrenombre,
@@ -80,7 +111,6 @@ public class RegistrarUsuario extends javax.swing.JFrame {
         generoUsuario = new javax.swing.JComboBox<>();
         telefonoUsuario = new javax.swing.JTextField();
         registrarDatos = new javax.swing.JButton();
-        subirFoto = new javax.swing.JButton();
         nuevaPassword = new javax.swing.JPasswordField();
         confirmarNuevaPassword = new javax.swing.JPasswordField();
         jLabel12 = new javax.swing.JLabel();
@@ -92,6 +122,9 @@ public class RegistrarUsuario extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         dpi = new javax.swing.JTextField();
         rolUsuario = new javax.swing.JComboBox<>();
+        subirImagen = new javax.swing.JButton();
+        subirFoto = new javax.swing.JLabel();
+        fotoActual = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -153,9 +186,6 @@ public class RegistrarUsuario extends javax.swing.JFrame {
             }
         });
         getContentPane().add(registrarDatos, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 480, -1, -1));
-
-        subirFoto.setText("Subir Foto");
-        getContentPane().add(subirFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 50, -1, -1));
         getContentPane().add(nuevaPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 160, -1));
         getContentPane().add(confirmarNuevaPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 260, 160, -1));
 
@@ -202,6 +232,27 @@ public class RegistrarUsuario extends javax.swing.JFrame {
         rolUsuario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Usuario Individual", "Usuario Empresarial", "Kiosko" }));
         rolUsuario.setSelectedItem(null);
         getContentPane().add(rolUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 430, -1, -1));
+
+        subirImagen.setText("Elegir imagen");
+        subirImagen.setActionCommand("SubirImagen");
+        subirImagen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                subirImagenActionPerformed(evt);
+            }
+        });
+        getContentPane().add(subirImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 50, -1, -1));
+
+        subirFoto.setForeground(new java.awt.Color(0, 0, 0));
+        subirFoto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        subirFoto.setText("Preview");
+        subirFoto.setPreferredSize(new java.awt.Dimension(100, 100));
+        getContentPane().add(subirFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 10, -1, -1));
+
+        fotoActual.setForeground(new java.awt.Color(0, 0, 0));
+        fotoActual.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        fotoActual.setText("Foto actual");
+        fotoActual.setPreferredSize(new java.awt.Dimension(100, 100));
+        getContentPane().add(fotoActual, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 330, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -295,6 +346,20 @@ public class RegistrarUsuario extends javax.swing.JFrame {
             dpi.setText("");
        }
     }//GEN-LAST:event_dpiFocusLost
+
+    private void subirImagenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subirImagenActionPerformed
+        fotoActual.setPreferredSize(new Dimension(100, 100));
+        JFileChooser fileChooser = new JFileChooser();
+        int result = fileChooser.showOpenDialog(this);
+
+        if (result == JFileChooser.APPROVE_OPTION) {
+            fotoActual.setText("");
+            subirFoto.setText("");
+            File seleccionarArchivo = fileChooser.getSelectedFile();
+            rutaFoto = seleccionarArchivo.getAbsolutePath();
+            fotoPreview(rutaFoto);
+        }
+    }//GEN-LAST:event_subirImagenActionPerformed
     
     
     // Declaracion de "Getters y Setters"
@@ -388,6 +453,7 @@ public class RegistrarUsuario extends javax.swing.JFrame {
     private javax.swing.JTextField correoElectronico;
     private javax.swing.JTextField dpi;
     private javax.swing.JTextField fechaNacimientoNuevoUsuario;
+    private javax.swing.JLabel fotoActual;
     private javax.swing.JComboBox<String> generoUsuario;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -412,7 +478,8 @@ public class RegistrarUsuario extends javax.swing.JFrame {
     private javax.swing.JButton regregarLogin;
     private javax.swing.JComboBox<String> rolUsuario;
     private javax.swing.JTextField sobrenombreUsuario;
-    private javax.swing.JButton subirFoto;
+    private javax.swing.JLabel subirFoto;
+    private javax.swing.JButton subirImagen;
     private javax.swing.JTextField telefonoUsuario;
     // End of variables declaration//GEN-END:variables
 }

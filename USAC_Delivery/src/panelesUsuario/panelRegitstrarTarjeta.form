@@ -26,14 +26,15 @@
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="jLabel16" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="119" max="-2" attributes="0"/>
-                              <Component id="jLabel15" min="-2" max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="jLabel16" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="nombreTarjeta" alignment="0" min="-2" pref="149" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="135" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="89" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jLabel15" min="-2" max="-2" attributes="0"/>
+                          <Component id="numeroTarjeta" min="-2" pref="144" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="113" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jLabel17" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="fechaVencimiento" alignment="0" min="-2" pref="149" max="-2" attributes="0"/>
@@ -46,6 +47,11 @@
                   </Group>
               </Group>
               <EmptySpace pref="92" max="32767" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="guardarTarjeta" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="405" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -66,8 +72,11 @@
                   <Component id="fechaVencimiento" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="cvv" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="nombreTarjeta" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="numeroTarjeta" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="327" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="127" max="-2" attributes="0"/>
+              <Component id="guardarTarjeta" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="177" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -106,6 +115,19 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Registro de tarjeta de cr&#xe9;dito/d&#xe9;bito"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="numeroTarjeta">
+      <Events>
+        <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="numeroTarjetaFocusLost"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="guardarTarjeta">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Guardar"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="guardarTarjetaActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

@@ -1,4 +1,5 @@
 package Autenticar;
+import javax.swing.JOptionPane;
 import panelesAdministrador.RegistrarUsuario;
 
 public class LogIn extends javax.swing.JPanel{
@@ -7,6 +8,7 @@ RegistrarUsuario registrarUsuarios1 = new RegistrarUsuario();
     public LogIn() {
         initComponents();
         this.setLocation(0,0);
+        mensajeAlerta.setVisible(false);
     }
     
     public String getUsuario(){
@@ -33,6 +35,7 @@ RegistrarUsuario registrarUsuarios1 = new RegistrarUsuario();
         PasswordField = new javax.swing.JPasswordField();
         registrarUsuarios = new javax.swing.JButton();
         limpiarCasillas = new javax.swing.JButton();
+        mensajeAlerta = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 153));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -43,6 +46,15 @@ RegistrarUsuario registrarUsuarios1 = new RegistrarUsuario();
         labelCorreo.setText("Correo Electrónico");
         add(labelCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
         add(textFieldCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 246, -1));
+
+        PasswordField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                PasswordFieldFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                PasswordFieldFocusLost(evt);
+            }
+        });
         add(PasswordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 246, -1));
 
         registrarUsuarios.setText("Registrar Nuevo Usuario");
@@ -60,6 +72,11 @@ RegistrarUsuario registrarUsuarios1 = new RegistrarUsuario();
             }
         });
         add(limpiarCasillas, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 640, 180, -1));
+
+        mensajeAlerta.setFont(new java.awt.Font("Kailasa", 1, 13)); // NOI18N
+        mensajeAlerta.setForeground(new java.awt.Color(255, 0, 51));
+        mensajeAlerta.setText("La contraseña tiene que contener 1 letra minuscula, 1 letra mayuscula, 1 número y 1 caracter especial");
+        add(mensajeAlerta, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void registrarUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarUsuariosActionPerformed
@@ -71,6 +88,47 @@ RegistrarUsuario registrarUsuarios1 = new RegistrarUsuario();
         textFieldCorreo.setText("");
     }//GEN-LAST:event_limpiarCasillasActionPerformed
 
+    private void PasswordFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_PasswordFieldFocusLost
+        char[] password = PasswordField.getPassword();
+        String passwordString = new String(password);
+        if(buenaPassword(passwordString)){
+                try{
+                    
+                }catch(java.lang.NumberFormatException trono){
+                    JOptionPane.showMessageDialog(null, "Ingrese numeros en vez de letras");
+                }catch(java.lang.NullPointerException nulo){
+                    JOptionPane.showMessageDialog(null, "No es permitido dejar el campo en blanco");
+                }
+            }else{
+                mensajeAlerta.setVisible(true);
+                PasswordField.setText("");
+                System.out.println("Contraseña Rechazada");
+            }
+    }//GEN-LAST:event_PasswordFieldFocusLost
+
+    private void PasswordFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_PasswordFieldFocusGained
+        mensajeAlerta.setVisible(false);
+    }//GEN-LAST:event_PasswordFieldFocusGained
+
+    public static boolean buenaPassword(String password) {                                          // Metodo para validar si la contraseña tiene buen formato
+        boolean tieneMayuscula = false, tieneNumero = false, tieneSimboloEspecial = false;
+        
+        for (int i = 0; i < password.length(); i++) {
+            char letra = password.charAt(i);
+            if (Character.isUpperCase(letra)) {
+                tieneMayuscula = true;
+            } else if (Character.isDigit(letra)) {
+                tieneNumero = true;
+            } else if (esCaracterEspecial(letra)) {
+                tieneSimboloEspecial = true;
+            }
+        }
+        return tieneMayuscula && tieneNumero && tieneSimboloEspecial;
+    }
+    
+    private static boolean esCaracterEspecial(char letra) {
+        return !Character.isLetterOrDigit(letra);
+    }
 
     
     
@@ -89,6 +147,7 @@ RegistrarUsuario registrarUsuarios1 = new RegistrarUsuario();
     private javax.swing.JLabel labelCorreo;
     private javax.swing.JLabel labelPassword;
     private javax.swing.JButton limpiarCasillas;
+    private javax.swing.JLabel mensajeAlerta;
     private javax.swing.JButton registrarUsuarios;
     private javax.swing.JTextField textFieldCorreo;
     // End of variables declaration//GEN-END:variables

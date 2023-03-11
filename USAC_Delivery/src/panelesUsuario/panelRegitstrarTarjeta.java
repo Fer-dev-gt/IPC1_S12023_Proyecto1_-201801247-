@@ -1,11 +1,23 @@
 package panelesUsuario;
+import java.text.ParseException;
+import javax.swing.JFormattedTextField;
+import javax.swing.text.MaskFormatter;
+import java.util.function.Function;
+
 
 public class PanelRegitstrarTarjeta extends javax.swing.JPanel {
 
     public PanelRegitstrarTarjeta() {
         initComponents();
     }
+    
+    public static Function<String, String> f1=(S)->{
+            return S.substring(0,S.length()-4).replaceAll("[0-9]","*")
+            +S.substring(S.length()-4,S.length());
+    };
+            
 
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -18,6 +30,8 @@ public class PanelRegitstrarTarjeta extends javax.swing.JPanel {
         nombreTarjeta = new javax.swing.JTextField();
         cvv = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
+        numeroTarjeta = new javax.swing.JTextField();
+        guardarTarjeta = new javax.swing.JButton();
 
         jLabel15.setText("Número de la tarjeta ");
 
@@ -29,6 +43,19 @@ public class PanelRegitstrarTarjeta extends javax.swing.JPanel {
 
         jLabel1.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
         jLabel1.setText("Registro de tarjeta de crédito/débito");
+
+        numeroTarjeta.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                numeroTarjetaFocusLost(evt);
+            }
+        });
+
+        guardarTarjeta.setText("Guardar");
+        guardarTarjeta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                guardarTarjetaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -43,12 +70,13 @@ public class PanelRegitstrarTarjeta extends javax.swing.JPanel {
                         .addGap(415, 415, 415))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel16)
-                                .addGap(119, 119, 119)
-                                .addComponent(jLabel15))
+                            .addComponent(jLabel16)
                             .addComponent(nombreTarjeta, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(135, 135, 135)
+                        .addGap(89, 89, 89)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel15)
+                            .addComponent(numeroTarjeta, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(113, 113, 113)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel17)
                             .addComponent(fechaVencimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -57,6 +85,10 @@ public class PanelRegitstrarTarjeta extends javax.swing.JPanel {
                             .addComponent(jLabel18)
                             .addComponent(cvv, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(92, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(guardarTarjeta)
+                .addGap(405, 405, 405))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -73,20 +105,44 @@ public class PanelRegitstrarTarjeta extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(fechaVencimiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cvv, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(nombreTarjeta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(327, Short.MAX_VALUE))
+                    .addComponent(nombreTarjeta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(numeroTarjeta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(127, 127, 127)
+                .addComponent(guardarTarjeta)
+                .addContainerGap(177, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void guardarTarjetaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardarTarjetaActionPerformed
+        String numeroTarjetaRegistrada = numeroTarjeta.getText();
+        System.out.println(f1.apply(numeroTarjetaRegistrada));
+        
+    }//GEN-LAST:event_guardarTarjetaActionPerformed
+
+    
+    
+    private void numeroTarjetaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_numeroTarjetaFocusLost
+        try {
+            MaskFormatter formatter = new MaskFormatter("#### #### #### ####");
+            JFormattedTextField formattedTextField = new JFormattedTextField(formatter);
+            formattedTextField.setText(numeroTarjeta.getText()); 
+            System.out.println("funciono");
+        } catch (ParseException e) {
+            System.out.println("No funciono");
+        }
+    }//GEN-LAST:event_numeroTarjetaFocusLost
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField cvv;
     private javax.swing.JTextField fechaVencimiento;
+    private javax.swing.JButton guardarTarjeta;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JTextField nombreTarjeta;
+    private javax.swing.JTextField numeroTarjeta;
     // End of variables declaration//GEN-END:variables
 }

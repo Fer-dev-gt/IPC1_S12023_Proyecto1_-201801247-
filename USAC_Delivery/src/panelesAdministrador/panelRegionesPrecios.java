@@ -64,6 +64,7 @@ public class PanelRegionesPrecios extends javax.swing.JPanel {
         precioEstandar = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -84,7 +85,7 @@ public class PanelRegionesPrecios extends javax.swing.JPanel {
         ));
         jScrollPane2.setViewportView(tablaPrecios);
 
-        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 230, 440, 370));
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 240, 440, 370));
 
         codigoRegion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "(M) Metropolitana", "(NT) Norte", "(NO) Nororiente", "(SO) Suroriente", "(SOC) Suroccidente", "(NOC) Noroccidente" }));
         codigoRegion.setSelectedItem(null);
@@ -126,6 +127,9 @@ public class PanelRegionesPrecios extends javax.swing.JPanel {
 
         jLabel6.setText("Q");
         add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 140, -1, -1));
+
+        jLabel7.setText("Tabla de Regiones y Precios ");
+        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void actualizarPreciosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizarPreciosActionPerformed
@@ -199,6 +203,7 @@ public class PanelRegionesPrecios extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField precioEspecial;
     private javax.swing.JTextField precioEstandar;
