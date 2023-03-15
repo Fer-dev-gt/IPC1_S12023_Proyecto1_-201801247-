@@ -333,12 +333,12 @@ public class VentanasPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void ingresoLogInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ingresoLogInActionPerformed
-        if(login.getUsuario().equals("a") && login.getClave().equals("a")){
+        if(login.getUsuario().equals("ipc1_201801247@ipc1delivery.com") && login.getClave().equals("201801247")){
             login.resetearCampos();
             cambiarPanel(menuAdministrador);
             panelAbajo.setVisible(false);
             opcionesAdministrador.setVisible(true);
-        }else if(login.getUsuario().equals("c") && login.getClave().equals("c")){
+        }else if(login.getUsuario().equals("user") && login.getClave().equals("user")){
             login.resetearCampos();
             cambiarPanel(menuUsuario);
             panelAbajo.setVisible(false);
@@ -346,7 +346,6 @@ public class VentanasPrincipal extends javax.swing.JFrame {
         }else{
             JOptionPane.showMessageDialog(null, "Usuario o Clave incorrectas, intente nuevamente");
         }
-
     }//GEN-LAST:event_ingresoLogInActionPerformed
 
     

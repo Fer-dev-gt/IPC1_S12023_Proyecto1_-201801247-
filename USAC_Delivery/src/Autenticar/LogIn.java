@@ -89,25 +89,24 @@ RegistrarUsuario registrarUsuarios1 = new RegistrarUsuario();
     }//GEN-LAST:event_limpiarCasillasActionPerformed
 
     private void PasswordFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_PasswordFieldFocusLost
+        mensajeAlerta.setVisible(false);
+        
+    }//GEN-LAST:event_PasswordFieldFocusLost
+
+    private void PasswordFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_PasswordFieldFocusGained
         char[] password = PasswordField.getPassword();
         String passwordString = new String(password);
         if(buenaPassword(passwordString)){
                 try{
                     
                 }catch(java.lang.NumberFormatException trono){
-                    JOptionPane.showMessageDialog(null, "Ingrese numeros en vez de letras");
                 }catch(java.lang.NullPointerException nulo){
-                    JOptionPane.showMessageDialog(null, "No es permitido dejar el campo en blanco");
                 }
             }else{
                 mensajeAlerta.setVisible(true);
                 PasswordField.setText("");
                 System.out.println("Contraseña Rechazada");
             }
-    }//GEN-LAST:event_PasswordFieldFocusLost
-
-    private void PasswordFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_PasswordFieldFocusGained
-        mensajeAlerta.setVisible(false);
     }//GEN-LAST:event_PasswordFieldFocusGained
 
     public static boolean buenaPassword(String password) {                                          // Metodo para validar si la contraseña tiene buen formato
